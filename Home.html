@@ -42,7 +42,7 @@ class="w-mod-js w-mod-ix">
             <div class="nav-start">
               <div class="nav-brand">
                 <a
-                  href="#Home.html"
+                  href="Home.html"
                   class="brand-link w-inline-block"
                   ><img
                     src="images/shredded_logo-removebg-preview.png"
@@ -82,31 +82,45 @@ class="w-mod-js w-mod-ix">
               <a
                 href="Login.html"
                 class="nav-phone"
-                style="color: black !important;"
+                style="color: black !important;
+                width: 96px;
+                height: 100%;
+                border-left: 1px solid var(--p1-10);
+                background-color: rgba(0, 0, 0, 0);
+                justify-content: center;
+                align-items: center;
+                transition: background-color .2s cubic-bezier(.39, .575, .565, 1);
+                display: flex;
+                margin-right: 0px !important;"
+                id="login"
                 >LOGIN</a>
-              <a
+
+                <a
                 href=""
-                class="nav-phone is-hidden-phone"
-                >+962 785 571 654</a>
-              <a
-                href="#"
-                class="menu-button w-inline-block"
-                ><img
-                  src="images/64d54306ff9f865a8c546e9e_burger.svg"
-                  loading="lazy"
-                  alt=""
-                  class="menu-icon"
-              /></a>
+                class="nav-phone"
+                style="color: black !important;
+                width: 96px;
+                height: 100%;
+                border-left: 1px solid var(--p1-10);
+                background-color: rgba(0, 0, 0, 0);
+                justify-content: center;
+                align-items: center;
+                transition: background-color .2s cubic-bezier(.39, .575, .565, 1);
+                display: flex;
+                margin-right: 0px !important;"
+                id="logout"
+                onclick="LOGOUT();"
+                >LOGOUT</a>
 
 
-
-
-              <div
+                <div
               data-open-product=""
               data-wf-cart-type="rightSidebar"
               data-wf-page-link-href-prefix=""
               class="w-commerce-commercecartwrapper cart"
+              style="border-left: 1px solid var(--p1-10);"
               data-node-type="commerce-cart-wrapper"
+              id="cart"
             >
               <a
                 class="w-commerce-commercecartopenlink cart-button w-inline-block"
@@ -121,10 +135,10 @@ class="w-mod-js w-mod-ix">
                   class="cart-icon"
                 />
                 <div
-                  data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22Number%22%2C%22filter%22%3A%7B%22type%22%3A%22numberPrecision%22%2C%22params%22%3A%5B%220%22%2C%22numberPrecision%22%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItemsCount%22%7D%7D%5D"
-                  class="w-commerce-commercecartopenlinkcount nav-cart-quantity"
+                   class="w-commerce-commercecartopenlinkcount nav-cart-quantity"
+                   id="count"
                 >
-                  3
+                  
                 </div></a
               >
               <div
@@ -155,7 +169,6 @@ class="w-mod-js w-mod-ix">
                   </div>
                   <div class="w-commerce-commercecartformwrapper">
                     <form
-                      style=""
                       class="w-commerce-commercecartform"
                       data-node-type="commerce-cart-form"
                     >
@@ -169,71 +182,17 @@ class="w-mod-js w-mod-ix">
                         class="w-commerce-commercecartlist cart-list"
                         data-wf-collection="database.commerceOrder.userItems"
                         data-wf-template-id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee1"
+                        id="cartItemsContainer"
                       >
-                        <!-- <div class="w-commerce-commercecartitem cart-item">123
-                          <img
-                            data-wf-bindings="%5B%7B%22src%22%3A%7B%22type%22%3A%22ImageRef%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0.product.f_thumbnail_%22%7D%7D%5D"
-                            src="./Home V1 _ Legato - Webflow Ecommerce Template_files/64da7ea28fc4a95250980c8a_fender-cs-david-gilmour-thumb.jpg"
-                            alt=""
-                            class="w-commerce-commercecartitemimage cart-image"
-                          />
-                          <div
-                            class="w-commerce-commercecartiteminfo cart-summary"
-                          >
-                            <div
-                              data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22PlainText%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0.product.f_name_%22%7D%7D%5D"
-                              class="w-commerce-commercecartproductname text-small is-semi-bold"
-                            >
-                              Fender Custom Shop David Gilmour Signature
-                              Stratocaster NOS
-                            </div>
-                            <div
-                              data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0.price%22%7D%7D%5D"
-                              class="text-regular"
-                            >
-                              $&nbsp;6,830.00&nbsp;USD
-                            </div>
-                            <script
-                              type="text/x-wf-template"
-                              id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee7"
-                            >
-                              %3Cli%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems.0.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems.0.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3C%2Fli%3E
-                            </script>
-                            <ul
-                              data-wf-bindings="%5B%7B%22optionSets%22%3A%7B%22type%22%3A%22CommercePropTable%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0.product.f_sku_properties_3dr[]%22%7D%7D%2C%7B%22optionValues%22%3A%7B%22type%22%3A%22CommercePropValues%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0.sku.f_sku_values_3dr%22%7D%7D%5D"
-                              class="w-commerce-commercecartoptionlist"
-                              data-wf-collection="database.commerceOrder.userItems.0.product.f_sku_properties_3dr"
-                              data-wf-template-id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee7"
-                            ></ul>
-                            <a
-                              href="https://legato-template.webflow.io/home-variants/home-v1#"
-                              role="button"
-                              data-wf-bindings="%5B%7B%22data-commerce-sku-id%22%3A%7B%22type%22%3A%22ItemRef%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0.sku.id%22%7D%7D%5D"
-                              class="w-inline-block"
-                              data-wf-cart-action="remove-item"
-                              data-commerce-sku-id="64da7ea6fa459775cabce649"
-                              aria-label="Remove item from cart"
-                              ><div class="text-tiny is-color-p3">
-                                Remove
-                              </div></a
-                            >
-                          </div>
-                          <input
-                            aria-label="Update quantity"
-                            data-wf-bindings="%5B%7B%22value%22%3A%7B%22type%22%3A%22Number%22%2C%22filter%22%3A%7B%22type%22%3A%22numberPrecision%22%2C%22params%22%3A%5B%220%22%2C%22numberPrecision%22%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0.count%22%7D%7D%2C%7B%22data-commerce-sku-id%22%3A%7B%22type%22%3A%22ItemRef%22%2C%22filter%22%3A%7B%22type%22%3A%22identity%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0.sku.id%22%7D%7D%5D"
-                            data-wf-conditions="%7B%22condition%22%3A%7B%22fields%22%3A%7B%22product%3Aec-product-type%22%3A%7B%22ne%22%3A%22e348fd487d0102946c9179d2a94bb613%22%2C%22type%22%3A%22Option%22%7D%7D%7D%2C%22dataPath%22%3A%22database.commerceOrder.userItems.0%22%7D"
-                            class="w-commerce-commercecartquantity"
-                            required=""
-                            pattern="^[0-9]+$"
-                            inputmode="numeric"
-                            type="number"
-                            name="quantity"
-                            autocomplete="off"
-                            data-wf-cart-action="update-item-quantity"
-                            data-commerce-sku-id="64da7ea6fa459775cabce649"
-                            value="1"
-                          />
-                        </div> -->
+                      <div
+                      class="w-commerce-commercecartemptystate"
+                      style="display: none"
+                      id="noitems"
+                    >
+                      <div aria-label="This cart is empty" aria-live="polite">
+                        Your cart is empty.
+                      </div>
+                    </div>
                         
                       </div>
                       <div class="w-commerce-commercecartfooter">
@@ -246,16 +205,17 @@ class="w-mod-js w-mod-ix">
                             Subtotal
                           </div>
                           <div
-                            data-wf-bindings="%5B%7B%22innerHTML%22%3A%7B%22type%22%3A%22CommercePrice%22%2C%22filter%22%3A%7B%22type%22%3A%22price%22%2C%22params%22%3A%5B%5D%7D%2C%22dataPath%22%3A%22database.commerceOrder.subtotal%22%7D%7D%5D"
                             class="w-commerce-commercecartordervalue text-regular is-semi-bold"
+                            id="subtotal"
                           >
-                            &nbsp;00.00&nbsp;JDs
+                            
                           </div>
                         </div>
                         <div>
                           
                           <a
-                            href=""
+                            href="Checkout.html"
+                            onclick="Checkout()"
                             value="Continue to Checkout"
                             class="w-commerce-commercecartcheckoutbutton submit-button"
                             style="border-radius: 0px;"
@@ -265,36 +225,27 @@ class="w-mod-js w-mod-ix">
                         </div>
                       </div>
                     </form>
-                    <div
-                      class="w-commerce-commercecartemptystate"
-                      style="display: none"
-                    >
-                      <div aria-label="This cart is empty" aria-live="polite">
-                        No items found.
-                      </div>
-                    </div>
-                    <div
-                      aria-live="assertive"
-                      style="display: none"
-                      data-node-type="commerce-cart-error"
-                      class="w-commerce-commercecarterrorstate error-state"
-                    >
-                      <div
-                        class="text-small w-cart-error-msg"
-                        data-w-cart-quantity-error="Product is not available in this quantity."
-                        data-w-cart-general-error="Something went wrong when adding this item to the cart."
-                        data-w-cart-checkout-error="Checkout is disabled on this site."
-                        data-w-cart-cart_order_min-error="The order minimum was not met. Add more items to your cart to continue."
-                        data-w-cart-subscription_error-error="Before you purchase, please use your email invite to verify your address so we can send order updates."
-                      >
-                        Product is not available in this quantity.
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
+              </div>
+
+              <a
+                href="#"
+                class="menu-button w-inline-block"
+                ><img
+                  src="images/64d54306ff9f865a8c546e9e_burger.svg"
+                  loading="lazy"
+                  alt=""
+                  class="menu-icon"
+              /></a>
+
+
+
+
+              
+           </div>
 
 
 
@@ -335,7 +286,15 @@ class="w-mod-js w-mod-ix">
                     href="Home.html"
                     class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">Home</div></a
-                  ><a
+                  >
+                  <a
+                    href="Profile.html"
+                    class="menu-link w-inline-block"
+                    id="profile"
+                    ><div class="text-regular is-color-p1">
+                      Profile
+                    </div></a>
+                  <a
                     href="Electricguitars.html"
                     class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">
@@ -375,7 +334,7 @@ class="w-mod-js w-mod-ix">
                     href="Soldguitars.html"
                     class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">
-                      Sold Guitar Selection
+                      Sold Items Selection
                     </div></a
                   ><a
                     href="Ordertracking.html"
@@ -386,9 +345,12 @@ class="w-mod-js w-mod-ix">
                 </div>
               </div>
             </div>
+
           </nav>
         </div>
       </header>
+
+
       <main class="sections">
         <section class="hero">
           <div class="hero-full">
@@ -754,5 +716,110 @@ class="w-mod-js w-mod-ix">
       src="files/webflow.5f909fe94.js.download"
       type="text/javascript"
     ></script>
+    <script>
+      function NAVBAR() {
+        let login = document.getElementById("login");
+        let logout = document.getElementById("logout");
+        let cart = document.getElementById("cart");
+        let profile = document.getElementById("profile");
+        let token = localStorage.getItem("jwtToken");
+        if(token != null || token != undefined){
+          login.style.display = "none";
+        }else{
+          logout.style.display = "none";
+          cart.style.display = "none";
+          profile.style.display = "none";
+        }
+      }
+      NAVBAR()
+      function LOGOUT() {
+        localStorage.removeItem("jwtToken");
+        localStorage.removeItem("userId");
+        window.location.href = "index.html";
+      }
+
+      async function cart() {
+        let userId = localStorage.getItem("userId");
+        let request = await fetch(`https://localhost:44384/api/Carts/GetCartItemsByUserId/${userId}`);
+        let data = await request.json();
+        console.log(data);
+        let cartItemsContainer = document.getElementById("cartItemsContainer");
+        if(data.cartItems == null || data.cartItems.length == 0){
+          let noitems = document.getElementById("noitems");
+          noitems.style.display = "";
+        }else{
+        data.cartItems.forEach(item => {
+          cartItemsContainer.innerHTML += `<div class="w-commerce-commercecartitem cart-item">
+                          <img
+                            src="images/${item.product.image1}"
+                            alt=""
+                            class="w-commerce-commercecartitemimage cart-image"
+                            style="height:92px;"
+                          />
+                          <div
+                            class="w-commerce-commercecartiteminfo cart-summary"
+                          >
+                            <div
+                              class="w-commerce-commercecartproductname text-small is-semi-bold"
+                            >
+                              ${item.product.name}
+                            </div>
+                            <div
+                            class="text-regular"
+                            >
+                              &nbsp;${(item.product.price - (item.product.price * item.product.discount))}.00&nbsp;JOD
+                            </div>
+                            
+                            
+                            <a
+                              href="#"
+                              role="button"
+                              class="w-inline-block"
+                              aria-label="Remove item from cart"
+                              onclick="removeCartItem(${item.id})"
+                              ><div class="text-tiny is-color-p3">
+                                Remove
+                              </div></a
+                            >
+                          </div>
+                          
+                        </div>`
+        });}
+        let subtotal = document.getElementById("subtotal");
+        subtotal.innerHTML = `&nbsp;<p id="total" style = "display: inline">${data.subtotal}</p>.00&nbsp;JDs`;
+          subtotal.style.display = "inline";
+        let count = document.getElementById("count");
+        count.innerHTML = `${data.count}`;
+      }
+      cart()
+
+      async function removeCartItem(cartItemId) {
+        let request = await fetch(`https://localhost:44384/api/Carts/DeleteCartItem/${cartItemId}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("jwtToken")}`
+          }
+        });
+        if (request.ok) {
+          cartItemsContainer.innerHTML = ""
+          cart();
+        } else {
+          console.log("Error deleting cart item");
+        }
+      }
+      function Checkout(){
+        debugger;
+        let userId = localStorage.getItem("userId");
+        let cartItemsContainer = document.getElementById("cartItemsContainer");
+        if(cartItemsContainer.innerHTML == ""){
+          alert("Your cart is empty!")
+        }else{
+          let total = document.getElementById("total");
+          localStorage.setItem("total", total.innerText);
+          window.location.href = "Checkout.html";
+        }
+      }
+    </script>
   </body>
 </html>

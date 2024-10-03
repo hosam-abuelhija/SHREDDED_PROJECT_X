@@ -1,0 +1,167 @@
+-- Table for customOrder
+CREATE TABLE customOrder (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    userName NVARCHAR(255),
+    userEmail VARCHAR(255),
+    desiredManufacturer NVARCHAR(255),
+    referenceLink1 NVARCHAR(MAX),
+    referenceLink2 NVARCHAR(MAX),
+    referenceLink3 NVARCHAR(MAX),
+    message NVARCHAR(MAX)
+);
+
+-- Table for repairAppliance
+CREATE TABLE repairAppliance (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    userName NVARCHAR(255),
+    userEmail VARCHAR(255),
+    service NVARCHAR(MAX),
+    message NVARCHAR(MAX)
+);
+
+-- Table for contact
+CREATE TABLE contact (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    message NVARCHAR(MAX) NOT NULL
+);
+
+-- Table for admin
+CREATE TABLE admin (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(255),
+    username NVARCHAR(255),
+    email NVARCHAR(255),
+    image NVARCHAR(MAX),
+    passwordHash VARBINARY(MAX),
+    passwordSalt VARBINARY(MAX),
+    role NVARCHAR(50) CHECK (role IN ('Admin', 'Super Admin')) DEFAULT 'Admin',
+    createdAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table for tradeOrBuy
+CREATE TABLE tradeOrBuy (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    userName NVARCHAR(255),
+    userEmail VARCHAR(255),
+    brand NVARCHAR(255),
+    model NVARCHAR(255),
+    yearManufactured BIGINT,
+    serialNumber VARCHAR(255),
+    condition NVARCHAR(255),
+    hasCertificate NVARCHAR(255),
+    hasModifications NVARCHAR(255),
+    hasOriginalCase NVARCHAR(255),
+    askingPrice DECIMAL(18, 2),
+    sellOrTrade NVARCHAR(255)
+);
+
+-- Table for user
+CREATE TABLE [user] (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(255),
+    username NVARCHAR(255),
+    email NVARCHAR(255),
+    image NVARCHAR(MAX),
+    passwordHash VARBINARY(MAX),
+    passwordSalt VARBINARY(MAX),
+    status NVARCHAR(255) DEFAULT 'Active',
+    createdAt DATETIME DEFAULT GETDATE()
+);
+
+-- Table for categorie
+CREATE TABLE categorie (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(1000),
+    image NVARCHAR(MAX)
+);
+
+-- Table for product
+CREATE TABLE product (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    categoryId BIGINT FOREIGN KEY REFERENCES categorie(id),
+    name NVARCHAR(1000),
+    price DECIMAL(18, 2),
+    discount DECIMAL(18, 2),
+    tags NVARCHAR(MAX),
+    image1 NVARCHAR(MAX),
+    image2 NVARCHAR(MAX),
+    image3 NVARCHAR(MAX),
+    image4 NVARCHAR(MAX),
+    image5 NVARCHAR(MAX),
+    image6 NVARCHAR(MAX),
+    image7 NVARCHAR(MAX),
+    image8 NVARCHAR(MAX),
+    description NVARCHAR(MAX),
+    additionalInformation NVARCHAR(MAX),
+    includedAccessories NVARCHAR(MAX),
+    bodyGrade BIGINT,
+    nickGrade BIGINT,
+    body NVARCHAR(255),
+    nick NVARCHAR(255),
+    nickShape NVARCHAR(255),
+    fingerboard NVARCHAR(255),
+    scale NVARCHAR(255),
+    radius NVARCHAR(255),
+    fretsNutWidth NVARCHAR(255),
+    pickups NVARCHAR(255),
+    bridge NVARCHAR(255),
+    tuners NVARCHAR(255),
+    videoUrl NVARCHAR(MAX),
+    sold NVARCHAR(255) CHECK (sold IN ('Yes', 'No')) DEFAULT 'No'
+);
+
+-- Table for order
+CREATE TABLE "order" (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    userId BIGINT FOREIGN KEY REFERENCES [user](id),
+    orderDate DATETIME DEFAULT GETDATE(),
+    totalAmount DECIMAL(18, 2),
+    status NVARCHAR(255) CHECK (status IN ('Pending', 'Shipped', 'Delivered')) DEFAULT 'Pending'
+);
+
+-- Table for orderItem
+CREATE TABLE orderItem (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    productId BIGINT FOREIGN KEY REFERENCES product(id),
+    quantity BIGINT,
+    orderId BIGINT FOREIGN KEY REFERENCES "order"(id)
+);
+
+-- Table for cart
+CREATE TABLE cart (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    userId BIGINT UNIQUE FOREIGN KEY REFERENCES [user](id)
+);
+
+-- Table for cartItem
+CREATE TABLE cartItem (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    productId BIGINT FOREIGN KEY REFERENCES product(id),
+    cartId BIGINT FOREIGN KEY REFERENCES cart(id),
+    quantity BIGINT  DEFAULT 1
+);
+
+-- Table for address with 1:1 relationship with user
+CREATE TABLE address (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    userId BIGINT UNIQUE FOREIGN KEY REFERENCES [user](id),
+    city NVARCHAR(255),
+	area NVARCHAR(255),
+    street NVARCHAR(255),
+    phoneNumber NVARCHAR(255),
+    postalCode NVARCHAR(50),
+    Description NVARCHAR(MAX)
+);
+
+-- Table for payment with 1:1 relationship with order
+CREATE TABLE payment (
+    id BIGINT IDENTITY(1,1) PRIMARY KEY,
+    orderId BIGINT UNIQUE FOREIGN KEY REFERENCES "order"(id),
+    amount DECIMAL(18, 2),
+    method NVARCHAR(255),
+    transactionId NVARCHAR(MAX),
+    status NVARCHAR(255) CHECK (status IN ('Pending', 'Accepted', 'Declined')) DEFAULT 'Pending',
+    dateAndTime DATETIME DEFAULT GETDATE()
+);
