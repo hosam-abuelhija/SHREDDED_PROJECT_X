@@ -29,6 +29,7 @@ async function cart() {
     let noitems = document.getElementById("noitems");
     noitems.style.display = "";
   }else{
+    localStorage.setItem("cartItems", data.cartItems);
   data.cartItems.forEach(item => {
     cartItemsContainer.innerHTML += `<div class="w-commerce-commercecartitem cart-item">
                     <img

@@ -156,7 +156,7 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Orders</h1>
+      <h1>Admins</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -165,33 +165,39 @@
     </div><!-- End Page Title -->
 
     <section class="section">
-      <div class="row">
-        <div class="card">
-            <div class="card-body" style="
-            padding-left: 200px;
-            padding-right: 200px;
-        ">
-              <h5 class="card-title">Track Order</h5>
-
-              <!-- Floating Labels Form -->
-              <form class="row g-3">
-                <div class="col-md-12">
-                  <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingName" placeholder="Order ID">
-                    <label for="floatingName">Order ID</label>
-                  </div>
-                </div>
+        <div class="row">
+          <div class="col-lg-12">
+  
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Repair Applications</h5>
                 
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Track</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
-                </div>
-              </form><!-- End floating Labels Form -->
-
+  
+                <!-- Table with stripped rows -->
+                <table class="table ">
+                  <thead>
+                    <tr>
+                      <th>App ID</th>
+                      <th>User Name</th>
+                      <th>User Email</th>
+                      <th>Desired Manufacturer</th>
+                      <th>Reference Links</th>
+                      <th>Message</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                  </tbody>
+                </table>
+                <!-- End Table with stripped rows -->
+  
+              </div>
             </div>
+  
           </div>
-      </div>
-    </section>
+        </div>
+      </section>
 
   </main><!-- End #main -->
 
@@ -204,7 +210,30 @@
 </footer><!-- End Footer -->
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+<script>
+  async function GetApps() {
+    debugger
+        let body = document.getElementsByTagName("tbody")[0];
+        const response = await fetch('https://localhost:44384/api/Applications/AllCustomOrders');
+        const data = await response.json();
+        data.forEach(message => {
+          body.innerHTML += `
+          <tr>
+            <td>${message.id}</td>
+            <td>${message.userName}</td>
+            <td>${message.userEmail}</td>
+            <td>${message.desiredManufacturer}</td>
+            <td>${message.referenceLink1}, ${message.referenceLink2}, ${message.referenceLink3},</td>
+            <td>${message.message}</td>
+            <td>
+              <a href="mailto:${message.userEmail}" class="btn btn-primary btn-sm">Reply</a>
+            </td>
+            </tr>
+          `;
+        });
+  }
+  GetApps();
+</script>
 <!-- Vendor JS Files -->
 <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
 <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

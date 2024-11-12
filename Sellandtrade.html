@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html 
-data-wf-page="64dba5bf680fe39030ae311c"
-data-wf-site="64d510834c92a679c36ebd29"
-class="w-mod-js w-mod-ix">
+<html
+  data-wf-page="64dba5bf680fe39030ae311c"
+  data-wf-site="64d510834c92a679c36ebd29"
+  class="w-mod-js w-mod-ix"
+>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    
+
     <title>SHREDDED GUITARS</title>
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
@@ -14,16 +15,13 @@ class="w-mod-js w-mod-ix">
       rel="stylesheet"
       type="text/css"
     />
-    
+
     <link
       href="images/shredded_logo-removebg-preview.png"
       rel="shortcut icon"
       type="image/x-icon"
     />
-    <link
-      href=""
-      rel="apple-touch-icon"
-    />
+    <link href="" rel="apple-touch-icon" />
     <style>
       * {
         -webkit-font-smoothing: antialiased;
@@ -31,6 +29,63 @@ class="w-mod-js w-mod-ix">
       }
       .wf-force-outline-none[tabindex="-1"]:focus {
         outline: none;
+      }
+      .form__item {
+        margin-bottom: 1rem;
+      }
+
+      .form-check-options {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+      }
+
+      .form-check-item {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+      }
+
+      /* Custom radio button */
+      .custom-radio {
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        border: 2px solid #ccc;
+        border-radius: 50%; /* Round for radio */
+        margin-right: 10px;
+        cursor: pointer;
+        position: relative;
+      }
+
+      .custom-radio::after {
+        content: "";
+        width: 12px;
+        height: 12px;
+        background-color: #007bff; /* Color when selected */
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.2s ease;
+      }
+
+      input[type="radio"]:checked + .custom-radio::after {
+        opacity: 1;
+      }
+
+      .w-form-label {
+        cursor: pointer;
+        font-size: 14px;
+        color: #333;
       }
     </style>
   </head>
@@ -41,9 +96,7 @@ class="w-mod-js w-mod-ix">
           <nav class="nav">
             <div class="nav-start">
               <div class="nav-brand">
-                <a
-                  href="Home.html"
-                  class="brand-link w-inline-block"
+                <a href="Home.html" class="brand-link w-inline-block"
                   ><img
                     src="images/shredded_logo-removebg-preview.png"
                     loading="lazy"
@@ -51,10 +104,7 @@ class="w-mod-js w-mod-ix">
                     class="brand-image"
                 /></a>
               </div>
-              <form
-                action=""
-                class="nav-search w-form"
-              >
+              <form action="" class="nav-search w-form">
                 <input
                   class="search-input w-input"
                   maxlength="256"
@@ -82,179 +132,165 @@ class="w-mod-js w-mod-ix">
               <a
                 href="Login.html"
                 class="nav-phone"
-                style="color: black !important;
-                width: 96px;
-                height: 100%;
-                border-left: 1px solid var(--p1-10);
-                background-color: rgba(0, 0, 0, 0);
-                justify-content: center;
-                align-items: center;
-                transition: background-color .2s cubic-bezier(.39, .575, .565, 1);
-                display: flex;
-                margin-right: 0px !important;"
+                style="
+                  color: black !important;
+                  width: 96px;
+                  height: 100%;
+                  border-left: 1px solid var(--p1-10);
+                  background-color: rgba(0, 0, 0, 0);
+                  justify-content: center;
+                  align-items: center;
+                  transition: background-color 0.2s
+                    cubic-bezier(0.39, 0.575, 0.565, 1);
+                  display: flex;
+                  margin-right: 0px !important;
+                "
                 id="login"
-                >LOGIN</a>
+                >LOGIN</a
+              >
 
-                <a
+              <a
                 href=""
                 class="nav-phone"
-                style="color: black !important;
-                width: 96px;
-                height: 100%;
-                border-left: 1px solid var(--p1-10);
-                background-color: rgba(0, 0, 0, 0);
-                justify-content: center;
-                align-items: center;
-                transition: background-color .2s cubic-bezier(.39, .575, .565, 1);
-                display: flex;
-                margin-right: 0px !important;"
+                style="
+                  color: black !important;
+                  width: 96px;
+                  height: 100%;
+                  border-left: 1px solid var(--p1-10);
+                  background-color: rgba(0, 0, 0, 0);
+                  justify-content: center;
+                  align-items: center;
+                  transition: background-color 0.2s
+                    cubic-bezier(0.39, 0.575, 0.565, 1);
+                  display: flex;
+                  margin-right: 0px !important;
+                "
                 id="logout"
                 onclick="LOGOUT();"
-                >LOGOUT</a>
-
-
-                <div
-              data-open-product=""
-              data-wf-cart-type="rightSidebar"
-              data-wf-page-link-href-prefix=""
-              class="w-commerce-commercecartwrapper cart"
-              style="border-left: 1px solid var(--p1-10);"
-              data-node-type="commerce-cart-wrapper"
-              id="cart"
-            >
-              <a
-                class="w-commerce-commercecartopenlink cart-button w-inline-block"
-                role="button"
-                aria-haspopup="dialog"
-                aria-label="Open cart containing 3 items"
-                data-node-type="commerce-cart-open-link"
-                ><img
-                  src="images/64d541c46e40e606fde65441_shopping-cart.svg"
-                  loading="lazy"
-                  alt=""
-                  class="cart-icon"
-                />
-                <div
-                   class="w-commerce-commercecartopenlinkcount nav-cart-quantity"
-                   id="count"
-                >
-                  
-                </div></a
+                >LOGOUT</a
               >
+
               <div
-                style="display: none"
-                class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar"
-                data-node-type="commerce-cart-container-wrapper"
+                data-open-product=""
+                data-wf-cart-type="rightSidebar"
+                data-wf-page-link-href-prefix=""
+                class="w-commerce-commercecartwrapper cart"
+                style="border-left: 1px solid var(--p1-10)"
+                data-node-type="commerce-cart-wrapper"
+                id="cart"
               >
+                <a
+                  class="w-commerce-commercecartopenlink cart-button w-inline-block"
+                  role="button"
+                  aria-haspopup="dialog"
+                  aria-label="Open cart containing 3 items"
+                  data-node-type="commerce-cart-open-link"
+                  ><img
+                    src="images/64d541c46e40e606fde65441_shopping-cart.svg"
+                    loading="lazy"
+                    alt=""
+                    class="cart-icon" />
+                  <div
+                    class="w-commerce-commercecartopenlinkcount nav-cart-quantity"
+                    id="count"
+                  ></div
+                ></a>
                 <div
-                  data-node-type="commerce-cart-container"
-                  role="dialog"
-                  class="w-commerce-commercecartcontainer"
+                  style="display: none"
+                  class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar"
+                  data-node-type="commerce-cart-container-wrapper"
                 >
-                  <div class="w-commerce-commercecartheader cart-header">
-                    <h4 class="w-commerce-commercecartheading heading-small">
-                      Your Cart
-                    </h4>
-                    <a
-                      class="w-commerce-commercecartcloselink close-cart w-inline-block"
-                      role="button"
-                      aria-label="Close cart"
-                      data-node-type="commerce-cart-close-link"
-                      ><img
-                        src="images/64d55bbe1ce7e197f6230d15_close.svg"
-                        loading="lazy"
-                        alt=""
-                        class="close-icon"
-                    /></a>
-                  </div>
-                  <div class="w-commerce-commercecartformwrapper">
-                    <form
-                      class="w-commerce-commercecartform"
-                      data-node-type="commerce-cart-form"
-                    >
-                      <script
-                        type="text/x-wf-template"
-                        id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee1"
-                      >
-                        %3Cdiv%20class%3D%22w-commerce-commercecartitem%20cart-item%22%3E%3Cimg%20data-wf-bindings%3D%22%255B%257B%2522src%2522%253A%257B%2522type%2522%253A%2522ImageRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_thumbnail_%2522%257D%257D%255D%22%20src%3D%22%22%20alt%3D%22%22%20class%3D%22w-commerce-commercecartitemimage%20cart-image%20w-dyn-bind-empty%22%2F%3E%3Cdiv%20class%3D%22w-commerce-commercecartiteminfo%20cart-summary%22%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_name_%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartproductname%20text-small%20is-semi-bold%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePrice%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522price%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.price%2522%257D%257D%255D%22%20class%3D%22text-regular%22%3E%24%C2%A00.00%C2%A0USD%3C%2Fdiv%3E%3Cscript%20type%3D%22text%2Fx-wf-template%22%20id%3D%22wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee7%22%3E%253Cli%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522PlainText%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D.name%252522%25257D%25257D%25255D%2522%2520class%253D%2522w-dyn-bind-empty%2522%253E%253C%252Fspan%253E%253Cspan%253E%253A%2520%253C%252Fspan%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522CommercePropValues%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D%252522%25257D%25257D%25255D%2522%2520class%253D%2522w-dyn-bind-empty%2522%253E%253C%252Fspan%253E%253C%252Fli%253E%3C%2Fscript%3E%3Cul%20data-wf-bindings%3D%22%255B%257B%2522optionSets%2522%253A%257B%2522type%2522%253A%2522CommercePropTable%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%5D%2522%257D%257D%252C%257B%2522optionValues%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_sku_values_3dr%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartoptionlist%22%20data-wf-collection%3D%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%22%20data-wf-template-id%3D%22wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee7%22%3E%3Cli%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3C%2Fli%3E%3C%2Ful%3E%3Ca%20href%3D%22%23%22%20role%3D%22button%22%20data-wf-bindings%3D%22%255B%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20class%3D%22w-inline-block%22%20data-wf-cart-action%3D%22remove-item%22%20data-commerce-sku-id%3D%22%22%20aria-label%3D%22Remove%20item%20from%20cart%22%3E%3Cdiv%20class%3D%22text-tiny%20is-color-p3%22%3ERemove%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cinput%20aria-label%3D%22Update%20quantity%22%20data-wf-bindings%3D%22%255B%257B%2522value%2522%253A%257B%2522type%2522%253A%2522Number%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522numberPrecision%2522%252C%2522params%2522%253A%255B%25220%2522%252C%2522numberPrecision%2522%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.count%2522%257D%257D%252C%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20data-wf-conditions%3D%22%257B%2522condition%2522%253A%257B%2522fields%2522%253A%257B%2522product%253Aec-product-type%2522%253A%257B%2522ne%2522%253A%2522e348fd487d0102946c9179d2a94bb613%2522%252C%2522type%2522%253A%2522Option%2522%257D%257D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D%2522%257D%22%20class%3D%22w-commerce-commercecartquantity%22%20required%3D%22%22%20pattern%3D%22%5E%5B0-9%5D%2B%24%22%20inputMode%3D%22numeric%22%20type%3D%22number%22%20name%3D%22quantity%22%20autoComplete%3D%22off%22%20data-wf-cart-action%3D%22update-item-quantity%22%20data-commerce-sku-id%3D%22%22%20value%3D%221%22%2F%3E%3C%2Fdiv%3E
-                      </script>
-                      <div
-                        class="w-commerce-commercecartlist cart-list"
-                        data-wf-collection="database.commerceOrder.userItems"
-                        data-wf-template-id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee1"
-                        id="cartItemsContainer"
-                      >
-                      <div
-                      class="w-commerce-commercecartemptystate"
-                      style="display: none"
-                      id="noitems"
-                    >
-                      <div aria-label="This cart is empty" aria-live="polite">
-                        Your cart is empty.
-                      </div>
+                  <div
+                    data-node-type="commerce-cart-container"
+                    role="dialog"
+                    class="w-commerce-commercecartcontainer"
+                  >
+                    <div class="w-commerce-commercecartheader cart-header">
+                      <h4 class="w-commerce-commercecartheading heading-small">
+                        Your Cart
+                      </h4>
+                      <a
+                        class="w-commerce-commercecartcloselink close-cart w-inline-block"
+                        role="button"
+                        aria-label="Close cart"
+                        data-node-type="commerce-cart-close-link"
+                        ><img
+                          src="images/64d55bbe1ce7e197f6230d15_close.svg"
+                          loading="lazy"
+                          alt=""
+                          class="close-icon"
+                      /></a>
                     </div>
-                        
-                      </div>
-                      <div class="w-commerce-commercecartfooter">
-                        <div
-                          aria-atomic="true"
-                          aria-live="polite"
-                          class="w-commerce-commercecartlineitem"
+                    <div class="w-commerce-commercecartformwrapper">
+                      <form
+                        class="w-commerce-commercecartform"
+                        data-node-type="commerce-cart-form"
+                      >
+                        <script
+                          type="text/x-wf-template"
+                          id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee1"
                         >
-                          <div class="text-regular is-semi-bold">
-                            Subtotal
-                          </div>
+                          %3Cdiv%20class%3D%22w-commerce-commercecartitem%20cart-item%22%3E%3Cimg%20data-wf-bindings%3D%22%255B%257B%2522src%2522%253A%257B%2522type%2522%253A%2522ImageRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_thumbnail_%2522%257D%257D%255D%22%20src%3D%22%22%20alt%3D%22%22%20class%3D%22w-commerce-commercecartitemimage%20cart-image%20w-dyn-bind-empty%22%2F%3E%3Cdiv%20class%3D%22w-commerce-commercecartiteminfo%20cart-summary%22%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_name_%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartproductname%20text-small%20is-semi-bold%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePrice%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522price%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.price%2522%257D%257D%255D%22%20class%3D%22text-regular%22%3E%24%C2%A00.00%C2%A0USD%3C%2Fdiv%3E%3Cscript%20type%3D%22text%2Fx-wf-template%22%20id%3D%22wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee7%22%3E%253Cli%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522PlainText%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D.name%252522%25257D%25257D%25255D%2522%2520class%253D%2522w-dyn-bind-empty%2522%253E%253C%252Fspan%253E%253Cspan%253E%253A%2520%253C%252Fspan%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522CommercePropValues%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D%252522%25257D%25257D%25255D%2522%2520class%253D%2522w-dyn-bind-empty%2522%253E%253C%252Fspan%253E%253C%252Fli%253E%3C%2Fscript%3E%3Cul%20data-wf-bindings%3D%22%255B%257B%2522optionSets%2522%253A%257B%2522type%2522%253A%2522CommercePropTable%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%5D%2522%257D%257D%252C%257B%2522optionValues%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_sku_values_3dr%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartoptionlist%22%20data-wf-collection%3D%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%22%20data-wf-template-id%3D%22wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee7%22%3E%3Cli%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3C%2Fli%3E%3C%2Ful%3E%3Ca%20href%3D%22%23%22%20role%3D%22button%22%20data-wf-bindings%3D%22%255B%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20class%3D%22w-inline-block%22%20data-wf-cart-action%3D%22remove-item%22%20data-commerce-sku-id%3D%22%22%20aria-label%3D%22Remove%20item%20from%20cart%22%3E%3Cdiv%20class%3D%22text-tiny%20is-color-p3%22%3ERemove%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cinput%20aria-label%3D%22Update%20quantity%22%20data-wf-bindings%3D%22%255B%257B%2522value%2522%253A%257B%2522type%2522%253A%2522Number%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522numberPrecision%2522%252C%2522params%2522%253A%255B%25220%2522%252C%2522numberPrecision%2522%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.count%2522%257D%257D%252C%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20data-wf-conditions%3D%22%257B%2522condition%2522%253A%257B%2522fields%2522%253A%257B%2522product%253Aec-product-type%2522%253A%257B%2522ne%2522%253A%2522e348fd487d0102946c9179d2a94bb613%2522%252C%2522type%2522%253A%2522Option%2522%257D%257D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D%2522%257D%22%20class%3D%22w-commerce-commercecartquantity%22%20required%3D%22%22%20pattern%3D%22%5E%5B0-9%5D%2B%24%22%20inputMode%3D%22numeric%22%20type%3D%22number%22%20name%3D%22quantity%22%20autoComplete%3D%22off%22%20data-wf-cart-action%3D%22update-item-quantity%22%20data-commerce-sku-id%3D%22%22%20value%3D%221%22%2F%3E%3C%2Fdiv%3E
+                        </script>
+                        <div
+                          class="w-commerce-commercecartlist cart-list"
+                          data-wf-collection="database.commerceOrder.userItems"
+                          data-wf-template-id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee1"
+                          id="cartItemsContainer"
+                        >
                           <div
-                            class="w-commerce-commercecartordervalue text-regular is-semi-bold"
-                            id="subtotal"
+                            class="w-commerce-commercecartemptystate"
+                            style="display: none"
+                            id="noitems"
                           >
-                            
+                            <div
+                              aria-label="This cart is empty"
+                              aria-live="polite"
+                            >
+                              Your cart is empty.
+                            </div>
                           </div>
                         </div>
-                        <div>
-                          
-                          <a
-                            href="Checkout.html"
-                            onclick="Checkout()"
-                            value="Continue to Checkout"
-                            class="w-commerce-commercecartcheckoutbutton submit-button"
-                            style="border-radius: 0px;"
-                            data-loading-text="Hang Tight..."
-                            >Continue to Checkout</a
+                        <div class="w-commerce-commercecartfooter">
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            class="w-commerce-commercecartlineitem"
                           >
+                            <div class="text-regular is-semi-bold">
+                              Subtotal
+                            </div>
+                            <div
+                              class="w-commerce-commercecartordervalue text-regular is-semi-bold"
+                              id="subtotal"
+                            ></div>
+                          </div>
+                          <div>
+                            <a
+                              href="Checkout.html"
+                              onclick="Checkout()"
+                              value="Continue to Checkout"
+                              class="w-commerce-commercecartcheckoutbutton submit-button"
+                              style="border-radius: 0px"
+                              data-loading-text="Hang Tight..."
+                              >Continue to Checkout</a
+                            >
+                          </div>
                         </div>
-                      </div>
-                    </form>
-                    
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
-              </div>
 
-              <a
-                href="#"
-                class="menu-button w-inline-block"
+              <a href="#" class="menu-button w-inline-block"
                 ><img
                   src="images/64d54306ff9f865a8c546e9e_burger.svg"
                   loading="lazy"
                   alt=""
                   class="menu-icon"
               /></a>
-
-
-
-
-              
-           </div>
-
-
-
-
-
-
-
-
-
+            </div>
 
             <div class="drop-menu" style="display: none">
               <div
@@ -265,92 +301,70 @@ class="w-mod-js w-mod-ix">
                     rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
                   transform-style: preserve-3d;
                 "
-              > 
+              >
                 <div class="menu-top">
-                  <a
-                    href="#"
-                    class="nav-phone"
-                    >+962 785 571 654</a
-                  ><a
-                    href="#"
-                    class="menu-close-button w-inline-block"
+                  <a href="#" class="nav-phone">+962 785 571 654</a
+                  ><a href="#" class="menu-close-button w-inline-block"
                     ><img
                       src="images/64d55bbe1ce7e197f6230d15_close.svg"
                       loading="lazy"
                       alt=""
                       class="close-icon"
                   /></a>
-                </div> 
+                </div>
                 <div class="menu-links">
-                  <a
-                    href="Home.html"
-                    class="menu-link w-inline-block"
+                  <a href="Home.html" class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">Home</div></a
                   >
                   <a
                     href="Profile.html"
                     class="menu-link w-inline-block"
                     id="profile"
-                    ><div class="text-regular is-color-p1">
-                      Profile
-                    </div></a>
+                    ><div class="text-regular is-color-p1">Profile</div></a
+                  >
                   <a
                     href="Electricguitars.html"
                     class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">
                       Electric Guitars
-                    </div></a>
-                    <a
-                    href="Amplifiers.html"
-                    class="menu-link w-inline-block"
-                    ><div class="text-regular is-color-p1">Amplifiers</div></a>
-                    <a
+                    </div></a
+                  >
+                  <a href="Amplifiers.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">Amplifiers</div></a
+                  >
+                  <a
                     href="Pedalsandeffects.html"
                     class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">
                       Pedals &amp; Effects
                     </div></a
-                  ><a
-                    href="Aboutus.html"
-                    class="menu-link w-inline-block"
+                  ><a href="Aboutus.html" class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">About Us</div></a
                   >
-                  <a
-                    href="Contactus.html"
-                    class="menu-link w-inline-block"
+                  <a href="Contactus.html" class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">Contact Us</div></a
                   >
-                  <a
-                    href="Sellandtrade.html"
-                    class="menu-link w-inline-block"
+                  <a href="Sellandtrade.html" class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">Sell / Trade</div></a
-                  ><a
-                    href="Guitarrepair.html"
-                    class="menu-link w-inline-block"
+                  ><a href="Guitarrepair.html" class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">
                       Guitar Repair
                     </div></a
-                  ><a
-                    href="Soldguitars.html"
-                    class="menu-link w-inline-block"
+                  ><a href="Soldguitars.html" class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">
                       Sold Items Selection
                     </div></a
-                  ><a
-                    href="Ordertracking.html"
-                    class="menu-link w-inline-block"
+                  ><a href="Ordertracking.html" class="menu-link w-inline-block"
                     ><div class="text-regular is-color-p1">
                       Order Tracking
-                    </div></a>
+                    </div></a
+                  >
                 </div>
               </div>
             </div>
-
           </nav>
         </div>
       </header>
-      
-
 
       <main class="sections">
         <div class="spacer-regular"></div>
@@ -367,282 +381,278 @@ class="w-mod-js w-mod-ix">
               </div>
               <div class="form-block w-form">
                 <form
-                  id="wf-form-Sell-Trade"
-                  name="wf-form-Sell-Trade"
-                  data-name="Sell / Trade"
-                  method="get"
+                  id="postForm"
                   class="form-content"
-                  data-wf-page-id="64dba5bf680fe39030ae311c"
-                  data-wf-element-id="aaeee592-adfe-3303-b9b3-39abd1ef49ad"
                   aria-label="Sell / Trade"
-                >
+                  >
                   <div class="form-item">
-                    <label for="name" class="form-label"
+                    <label for="UserName" class="form-label"
                       >Your name: <span class="is-color-p3">*</span></label
-                    ><input
+                    >
+                    <input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="name"
-                      data-name="Name"
+                      name="UserName"
+                      data-name="UserName"
                       placeholder="Your Name"
                       type="text"
-                      id="name"
+                      id="UserName"
                       required=""
                     />
                   </div>
+
                   <div class="form-item">
-                    <label for="email" class="form-label"
+                    <label for="UserEmail" class="form-label"
                       >Your email: <span class="is-color-p3">*</span></label
-                    ><input
+                    >
+                    <input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="Email"
-                      data-name="Email"
+                      name="UserEmail"
+                      data-name="UserEmail"
                       placeholder="example@email.com"
                       type="email"
-                      id="email"
+                      id="UserEmail"
                       required=""
                     />
                   </div>
+
                   <div class="form-item">
-                    <label for="guitar-brand" class="form-label"
+                    <label for="Brand" class="form-label"
                       >Your guitar's brand:
                       <span class="is-color-p3">*</span></label
-                    ><input
+                    >
+                    <input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="guitar-brand"
-                      data-name="Guitar Brand"
+                      name="Brand"
+                      data-name="Brand"
                       placeholder="Fender, Gibson, Suhr..."
                       type="text"
-                      id="guitar-brand"
+                      id="Brand"
                       required=""
                     />
                   </div>
+
                   <div class="form-item">
-                    <label for="guitar-model" class="form-label"
+                    <label for="Model" class="form-label"
                       >Your guitar's model:
                       <span class="is-color-p3">*</span></label
-                    ><input
+                    >
+                    <input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="guitar-model"
-                      data-name="Guitar Model"
+                      name="Model"
+                      data-name="Model"
                       placeholder="Tele, Strat, LP, SG..."
                       type="text"
-                      id="guitar-model"
+                      id="Model"
                       required=""
                     />
                   </div>
+
                   <div class="form-item">
-                    <label for="manufacture-year" class="form-label"
+                    <label for="YearManufactured" class="form-label"
                       >Year your guitar was manufactured:</label
-                    ><input
+                    >
+                    <input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="manufacture-year"
-                      data-name="Manufacture Year"
+                      name="YearManufactured"
+                      data-name="YearManufactured"
                       placeholder="1970, 1992, 2004, 2016..."
                       type="text"
-                      id="manufacture-year"
+                      id="YearManufactured"
                     />
                   </div>
+
                   <div class="form-item">
-                    <label for="serial-number" class="form-label"
+                    <label for="SerialNumber" class="form-label"
                       >Your guitar's serial number:</label
-                    ><input
+                    >
+                    <input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="serial-number"
-                      data-name="Serial Number"
+                      name="SerialNumber"
+                      data-name="SerialNumber"
                       placeholder="043828372 (example)"
                       type="text"
-                      id="serial-number"
+                      id="SerialNumber"
                     />
                   </div>
+
                   <div class="form-item">
-                    <label for="condition" class="form-label"
+                    <label for="Condition" class="form-label"
                       >Condition of your guitar:
                       <span class="is-color-p3">*</span></label
-                    ><input
+                    >
+                    <input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="condition"
+                      name="Condition"
                       data-name="Condition"
                       placeholder="Very Good, Good, Fair, or Poor"
                       type="text"
-                      id="condition"
+                      id="Condition"
                       required=""
                     />
                   </div>
+
                   <div class="form-item">
-                    <label for="Email-3" class="form-label"
-                      >Do you have a Certificate of Authenticity?
-                    </label>
+                    <label for="HasCertificate" class="form-label"
+                      >Do you have a Certificate of Authenticity?</label
+                    >
                     <div class="form-check-options is-flex">
-                      <label class="w-checkbox form-check-item"
-                        ><div
-                          class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"
-                        ></div>
+                      <label class="w-radio form-check-item">
                         <input
-                          type="checkbox"
-                          name="Certificate---Yes"
-                          id="Certificate---Yes"
-                          data-name="Certificate Yes"
-                          style="opacity: 0; position: absolute; z-index: -1"
-                        /><span
-                          class="text-small is-color-p1-40 w-form-label"
-                          for="Certificate---Yes"
+                          type="radio"
+                          name="HasCertificate"
+                          id="HasCertificateYes"
+                          value="Yes"
+                          class="form-radio-input"
+                        />
+                        <span class="custom-radio"></span>
+                        <span class="text-small is-color-p1-40 w-form-label"
                           >Yes</span
-                        ></label
-                      ><label class="w-checkbox form-check-item"
-                        ><div
-                          class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"
-                        ></div>
+                        >
+                      </label>
+                      <label class="w-radio form-check-item">
                         <input
-                          type="checkbox"
-                          name="Certificate---No"
-                          id="Certificate---No"
-                          data-name="Certificate No"
-                          style="opacity: 0; position: absolute; z-index: -1"
-                        /><span
-                          class="text-small is-color-p1-40 w-form-label"
-                          for="Certificate---No"
+                          type="radio"
+                          name="HasCertificate"
+                          id="HasCertificateNo"
+                          value="No"
+                          class="form-radio-input"
+                        />
+                        <span class="custom-radio"></span>
+                        <span class="text-small is-color-p1-40 w-form-label"
                           >No</span
-                        ></label
-                      >
+                        >
+                      </label>
                     </div>
                   </div>
+
                   <div class="form-item">
-                    <label for="Email-3" class="form-label"
+                    <label for="HasModifications" class="form-label"
                       >Does your guitar have any modification?</label
                     >
                     <div class="form-check-options is-flex">
-                      <label class="w-checkbox form-check-item"
-                        ><div
-                          class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"
-                        ></div>
+                      <label class="w-radio form-check-item">
                         <input
-                          type="checkbox"
-                          name="Modification---Yes"
-                          id="Modification---Yes"
-                          data-name="Modification Yes"
-                          style="opacity: 0; position: absolute; z-index: -1"
-                        /><span
-                          class="text-small is-color-p1-40 w-form-label"
-                          for="Modification---Yes"
+                          type="radio"
+                          name="HasModifications"
+                          id="HasModificationsYes"
+                          value="Yes"
+                          class="form-radio-input"
+                        />
+                        <span class="custom-radio"></span>
+                        <span class="text-small is-color-p1-40 w-form-label"
                           >Yes</span
-                        ></label
-                      ><label class="w-checkbox form-check-item"
-                        ><div
-                          class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"
-                        ></div>
+                        >
+                      </label>
+                      <label class="w-radio form-check-item">
                         <input
-                          type="checkbox"
-                          name="Modification---No"
-                          id="Modification---No"
-                          data-name="Modification No"
-                          style="opacity: 0; position: absolute; z-index: -1"
-                        /><span
-                          class="text-small is-color-p1-40 w-form-label"
-                          for="Modification---No"
+                          type="radio"
+                          name="HasModifications"
+                          id="HasModificationsNo"
+                          value="No"
+                          class="form-radio-input"
+                        />
+                        <span class="custom-radio"></span>
+                        <span class="text-small is-color-p1-40 w-form-label"
                           >No</span
-                        ></label
-                      >
+                        >
+                      </label>
                     </div>
                   </div>
+
                   <div class="form-item">
-                    <label for="Email-3" class="form-label"
+                    <label for="HasOriginalCase" class="form-label"
                       >Does your guitar have its original case?</label
                     >
                     <div class="form-check-options is-flex">
-                      <label class="w-checkbox form-check-item"
-                        ><div
-                          class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"
-                        ></div>
+                      <label class="w-radio form-check-item">
                         <input
-                          type="checkbox"
-                          name="Original-Case---Yes"
-                          id="Original-Case---Yes"
-                          data-name="Original Case Yes"
-                          style="opacity: 0; position: absolute; z-index: -1"
-                        /><span
-                          class="text-small is-color-p1-40 w-form-label"
-                          for="Original-Case---Yes"
+                          type="radio"
+                          name="HasOriginalCase"
+                          id="HasOriginalCaseYes"
+                          value="Yes"
+                          class="form-radio-input"
+                        />
+                        <span class="custom-radio"></span>
+                        <span class="text-small is-color-p1-40 w-form-label"
                           >Yes</span
-                        ></label
-                      ><label class="w-checkbox form-check-item"
-                        ><div
-                          class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"
-                        ></div>
+                        >
+                      </label>
+                      <label class="w-radio form-check-item">
                         <input
-                          type="checkbox"
-                          name="Original-Case---No"
-                          id="Original-Case---No"
-                          data-name="Original Case No"
-                          style="opacity: 0; position: absolute; z-index: -1"
-                        /><span
-                          class="text-small is-color-p1-40 w-form-label"
-                          for="Original-Case---No"
+                          type="radio"
+                          name="HasOriginalCase"
+                          id="HasOriginalCaseNo"
+                          value="No"
+                          class="form-radio-input"
+                        />
+                        <span class="custom-radio"></span>
+                        <span class="text-small is-color-p1-40 w-form-label"
                           >No</span
-                        ></label
-                      >
+                        >
+                      </label>
                     </div>
                   </div>
+
                   <div class="form-item">
-                    <label for="asking-price" class="form-label"
+                    <label for="AskingPrice" class="form-label"
                       >What is your asking price?
                       <span class="is-color-p3">*</span></label
-                    ><input
+                    >
+                    <input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="asking-price"
-                      data-name="Asking Price"
+                      name="AskingPrice"
+                      data-name="AskingPrice"
                       placeholder="JOD"
                       type="text"
-                      id="asking-price"
+                      id="AskingPrice"
                       required=""
                     />
                   </div>
+
                   <div class="form__item">
-                    <label for="Email-3" class="form-label"
+                    <label for="SellOrTrade" class="form-label"
                       >What do you want to do?
-                      <span class="is-color-p3">*</span></label
-                    >
+                      <span class="is-color-p3">*</span>
+                    </label>
                     <div class="form-check-options is-flex">
-                      <label class="w-checkbox form-check-item"
-                        ><div
-                          class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"
-                        ></div>
+                      <label class="w-radio form-check-item">
                         <input
                           id="Sell"
-                          type="checkbox"
-                          name="Sell"
-                          data-name="Sell"
-                          style="opacity: 0; position: absolute; z-index: -1"
-                        /><span
-                          class="text-small is-color-p1-40 w-form-label"
-                          for="Sell"
+                          type="radio"
+                          name="SellOrTrade"
+                          value="Sell"
+                          class="form-radio-input"
+                        />
+                        <span class="custom-radio"></span>
+                        <span class="text-small is-color-p1-40 w-form-label"
                           >Sell</span
-                        ></label
-                      ><label class="w-checkbox form-check-item"
-                        ><div
-                          class="w-checkbox-input w-checkbox-input--inputType-custom form-checkbox"
-                        ></div>
+                        >
+                      </label>
+
+                      <label class="w-radio form-check-item">
                         <input
                           id="Trade"
-                          type="checkbox"
-                          name="Trade"
-                          data-name="Trade"
-                          style="opacity: 0; position: absolute; z-index: -1"
-                        /><span
-                          class="text-small is-color-p1-40 w-form-label"
-                          for="Trade"
+                          type="radio"
+                          name="SellOrTrade"
+                          value="Trade"
+                          class="form-radio-input"
+                        />
+                        <span class="custom-radio"></span>
+                        <span class="text-small is-color-p1-40 w-form-label"
                           >Trade</span
-                        ></label
-                      >
+                        >
+                      </label>
                     </div>
                   </div>
+
                   <div class="button-wrapper-large for-forms">
                     <div class="button-back"></div>
                     <input
@@ -650,9 +660,11 @@ class="w-mod-js w-mod-ix">
                       data-wait=""
                       class="button-large w-button"
                       value="Submit"
+                      onclick="post()"
                     />
                   </div>
                 </form>
+
                 <div
                   class="success-message w-form-done"
                   tabindex="-1"
@@ -681,9 +693,6 @@ class="w-mod-js w-mod-ix">
         <div class="spacer-large"></div>
       </main>
 
-
-      
-
       <footer class="footer">
         <div class="footer-content">
           <div
@@ -692,9 +701,10 @@ class="w-mod-js w-mod-ix">
           >
             <div class="newsletter w-form">
               <div class="text-large is-color-p2">
-                SUBSCRIBE! and be the first one to see our latest and greatest arrivals. Never miss a deal!
+                SUBSCRIBE! and be the first one to see our latest and greatest
+                arrivals. Never miss a deal!
               </div>
-              
+
               <form
                 id="wf-form-Newsletter"
                 class="newsletter-form"
@@ -721,10 +731,7 @@ class="w-mod-js w-mod-ix">
           >
             <div class="footer-contact">
               <div class="contact-link">
-                <a
-                  href="#"
-                  target="_blank"
-                  class="text-link-large"
+                <a href="#" target="_blank" class="text-link-large"
                   >IRBID, JORDAN</a
                 >
               </div>
@@ -735,11 +742,7 @@ class="w-mod-js w-mod-ix">
                   >
                 </div>
                 <div class="contact-link">
-                  <a
-                    href="#"
-                    class="text-link-large"
-                    >+962 785 571 654</a
-                  >
+                  <a href="#" class="text-link-large">+962 785 571 654</a>
                 </div>
               </div>
             </div>
@@ -778,13 +781,9 @@ class="w-mod-js w-mod-ix">
           <div class="footer-block">
             <h3 class="heading-small for-footer">Explore</h3>
             <div class="footer-links">
-              <a
-                href="Electricguitars.html"
-                class="footer-link w-inline-block"
+              <a href="Electricguitars.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">Electric Guitars</div></a
-              ><a
-                href="Amplifiers.html"
-                class="footer-link w-inline-block"
+              ><a href="Amplifiers.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">Amplifiers</div></a
               ><a
                 href="Pedalsandeffects.html"
@@ -792,9 +791,7 @@ class="w-mod-js w-mod-ix">
                 ><div class="text-small for-footer">
                   Pedals &amp; Effects
                 </div></a
-              ><a
-                href="Aboutus.html"
-                class="footer-link w-inline-block"
+              ><a href="Aboutus.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">About Us</div></a
               >
             </div>
@@ -802,23 +799,15 @@ class="w-mod-js w-mod-ix">
           <div class="footer-block">
             <h3 class="heading-small for-footer">Services</h3>
             <div class="footer-links">
-              <a
-                href="Sellandtrade.html"
-                class="footer-link w-inline-block"
+              <a href="Sellandtrade.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">Sell / Trade</div></a
-              ><a
-                href="Guitarrepair.html"
-                class="footer-link w-inline-block"
+              ><a href="Guitarrepair.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">Guitar Repair</div></a
-              ><a
-                href="Soldguitars.html"
-                class="footer-link w-inline-block"
+              ><a href="Soldguitars.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">
                   Sold Guitar Selection
                 </div></a
-              ><a
-                href="Ordertracking.html"
-                class="footer-link w-inline-block"
+              ><a href="Ordertracking.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">Order Tracking</div></a
               >
             </div>
@@ -826,9 +815,7 @@ class="w-mod-js w-mod-ix">
           <div class="footer-block">
             <h3 class="heading-small for-footer">Help</h3>
             <div class="footer-links">
-              <a
-                href="Contactus.html"
-                class="footer-link w-inline-block"
+              <a href="Contactus.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">Contact Us</div></a
               ><a
                 href="Shippingandreturns.html"
@@ -842,9 +829,7 @@ class="w-mod-js w-mod-ix">
                 ><div class="text-small for-footer">
                   Terms &amp; Conditions
                 </div></a
-              ><a
-                href="Privacypolicy.html"
-                class="footer-link w-inline-block"
+              ><a href="Privacypolicy.html" class="footer-link w-inline-block"
                 ><div class="text-small for-footer">Privacy Policy</div></a
               >
             </div>
@@ -863,7 +848,7 @@ class="w-mod-js w-mod-ix">
           <div
             id="w-node-_2bbcaee1-ac5e-59c7-7c95-530232566428-325663be"
             class="footer-block for-legal"
-            style="display: flex; justify-content: center;"
+            style="display: flex; justify-content: center"
           >
             <div class="text-small for-footer">
               ©2024 Shredded Guitars.
@@ -883,6 +868,24 @@ class="w-mod-js w-mod-ix">
       src="files/webflow.5f909fe94.js.download"
       type="text/javascript"
     ></script>
+    <script>
+      async function post() {
+        debugger;
+        event.preventDefault();
+        let message = document.getElementById("errormessage")
+        const formRef = document.getElementById("postForm");
+        const formData = new FormData(formRef);
+        let response = await fetch(`https://localhost:44384/api/SellOrTades`, {
+          method: "POST",
+          body: formData,
+        });
+        if (response.status != 200) {
+            message.innerHTML = `<p style="color:red;">Oops! Something went wrong while submitting the form. Please try again.</p><br/>`;
+            return;
+        }
+        alert("Thank you! We'll appraise your instrument and contact you via email as soon as possible.");
+      }
+    </script>
     <script src="nav.js"></script>
   </body>
 </html>

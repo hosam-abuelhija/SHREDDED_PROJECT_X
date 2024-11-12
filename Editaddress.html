@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html
+  data-wf-page="64db868561707c49632aaab3"
+  data-wf-site="64d510834c92a679c36ebd29"
+  class="w-mod-js w-mod-ix"
+>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <title>SHREDDED GUITARS</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Webflow" name="generator" />
+    <link
+      href="files/legato-template.webflow.64ce0d9f8.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="images/shredded_logo-removebg-preview.png"
+      rel="shortcut icon"
+      type="image/x-icon"
+    />
+    <link href="" rel="apple-touch-icon" />
+    <style>
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      .wf-force-outline-none[tabindex="-1"]:focus {
+        outline: none;
+      }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="header">
+        <div class="navbar">
+          <nav class="nav">
+            <div class="nav-start">
+              <div class="nav-brand">
+                <a href="Home.html" class="brand-link w-inline-block"
+                  ><img
+                    src="images/shredded_logo-removebg-preview.png"
+                    loading="lazy"
+                    alt="SHREDDED GUITARS"
+                    class="brand-image"
+                /></a>
+              </div>
+              <form action="" class="nav-search w-form">
+                <input
+                  class="search-input w-input"
+                  maxlength="256"
+                  name="query"
+                  placeholder="Search…"
+                  type="search"
+                  id="search"
+                  required=""
+                /><input
+                  type="submit"
+                  class="search-button w-button"
+                  value=""
+                />
+                <div class="search-icon">
+                  <img
+                    src="images/64d53f6eed82aea1b4a573bf_search-icon.svg"
+                    loading="lazy"
+                    alt=""
+                    class="icon-small"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="nav-end">
+              <a
+                href="Login.html"
+                class="nav-phone"
+                style="
+                  color: black !important;
+                  width: 96px;
+                  height: 100%;
+                  border-left: 1px solid var(--p1-10);
+                  background-color: rgba(0, 0, 0, 0);
+                  justify-content: center;
+                  align-items: center;
+                  transition: background-color 0.2s
+                    cubic-bezier(0.39, 0.575, 0.565, 1);
+                  display: flex;
+                  margin-right: 0px !important;
+                "
+                id="login"
+                >LOGIN</a
+              >
+
+              <a
+                href=""
+                class="nav-phone"
+                style="
+                  color: black !important;
+                  width: 96px;
+                  height: 100%;
+                  border-left: 1px solid var(--p1-10);
+                  background-color: rgba(0, 0, 0, 0);
+                  justify-content: center;
+                  align-items: center;
+                  transition: background-color 0.2s
+                    cubic-bezier(0.39, 0.575, 0.565, 1);
+                  display: flex;
+                  margin-right: 0px !important;
+                "
+                id="logout"
+                onclick="LOGOUT();"
+                >LOGOUT</a
+              >
+
+              <div
+                data-open-product=""
+                data-wf-cart-type="rightSidebar"
+                data-wf-page-link-href-prefix=""
+                class="w-commerce-commercecartwrapper cart"
+                style="border-left: 1px solid var(--p1-10)"
+                data-node-type="commerce-cart-wrapper"
+                id="cart"
+              >
+                <a
+                  class="w-commerce-commercecartopenlink cart-button w-inline-block"
+                  role="button"
+                  aria-haspopup="dialog"
+                  aria-label="Open cart containing 3 items"
+                  data-node-type="commerce-cart-open-link"
+                  ><img
+                    src="images/64d541c46e40e606fde65441_shopping-cart.svg"
+                    loading="lazy"
+                    alt=""
+                    class="cart-icon" />
+                  <div
+                    class="w-commerce-commercecartopenlinkcount nav-cart-quantity"
+                    id="count"
+                  ></div
+                ></a>
+                <div
+                  style="display: none"
+                  class="w-commerce-commercecartcontainerwrapper w-commerce-commercecartcontainerwrapper--cartType-rightSidebar"
+                  data-node-type="commerce-cart-container-wrapper"
+                >
+                  <div
+                    data-node-type="commerce-cart-container"
+                    role="dialog"
+                    class="w-commerce-commercecartcontainer"
+                  >
+                    <div class="w-commerce-commercecartheader cart-header">
+                      <h4 class="w-commerce-commercecartheading heading-small">
+                        Your Cart
+                      </h4>
+                      <a
+                        class="w-commerce-commercecartcloselink close-cart w-inline-block"
+                        role="button"
+                        aria-label="Close cart"
+                        data-node-type="commerce-cart-close-link"
+                        ><img
+                          src="images/64d55bbe1ce7e197f6230d15_close.svg"
+                          loading="lazy"
+                          alt=""
+                          class="close-icon"
+                      /></a>
+                    </div>
+                    <div class="w-commerce-commercecartformwrapper">
+                      <form
+                        class="w-commerce-commercecartform"
+                        data-node-type="commerce-cart-form"
+                      >
+                        <script
+                          type="text/x-wf-template"
+                          id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee1"
+                        >
+                          %3Cdiv%20class%3D%22w-commerce-commercecartitem%20cart-item%22%3E%3Cimg%20data-wf-bindings%3D%22%255B%257B%2522src%2522%253A%257B%2522type%2522%253A%2522ImageRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_thumbnail_%2522%257D%257D%255D%22%20src%3D%22%22%20alt%3D%22%22%20class%3D%22w-commerce-commercecartitemimage%20cart-image%20w-dyn-bind-empty%22%2F%3E%3Cdiv%20class%3D%22w-commerce-commercecartiteminfo%20cart-summary%22%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_name_%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartproductname%20text-small%20is-semi-bold%20w-dyn-bind-empty%22%3E%3C%2Fdiv%3E%3Cdiv%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePrice%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522price%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.price%2522%257D%257D%255D%22%20class%3D%22text-regular%22%3E%24%C2%A00.00%C2%A0USD%3C%2Fdiv%3E%3Cscript%20type%3D%22text%2Fx-wf-template%22%20id%3D%22wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee7%22%3E%253Cli%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522PlainText%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D.name%252522%25257D%25257D%25255D%2522%2520class%253D%2522w-dyn-bind-empty%2522%253E%253C%252Fspan%253E%253Cspan%253E%253A%2520%253C%252Fspan%253E%253Cspan%2520data-wf-bindings%253D%2522%25255B%25257B%252522innerHTML%252522%25253A%25257B%252522type%252522%25253A%252522CommercePropValues%252522%25252C%252522filter%252522%25253A%25257B%252522type%252522%25253A%252522identity%252522%25252C%252522params%252522%25253A%25255B%25255D%25257D%25252C%252522dataPath%252522%25253A%252522database.commerceOrder.userItems%25255B%25255D.product.f_sku_properties_3dr%25255B%25255D%252522%25257D%25257D%25255D%2522%2520class%253D%2522w-dyn-bind-empty%2522%253E%253C%252Fspan%253E%253C%252Fli%253E%3C%2Fscript%3E%3Cul%20data-wf-bindings%3D%22%255B%257B%2522optionSets%2522%253A%257B%2522type%2522%253A%2522CommercePropTable%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%5B%5D%2522%257D%257D%252C%257B%2522optionValues%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.f_sku_values_3dr%2522%257D%257D%255D%22%20class%3D%22w-commerce-commercecartoptionlist%22%20data-wf-collection%3D%22database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%22%20data-wf-template-id%3D%22wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee7%22%3E%3Cli%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522PlainText%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D.name%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3Cspan%3E%3A%20%3C%2Fspan%3E%3Cspan%20data-wf-bindings%3D%22%255B%257B%2522innerHTML%2522%253A%257B%2522type%2522%253A%2522CommercePropValues%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.product.f_sku_properties_3dr%255B%255D%2522%257D%257D%255D%22%20class%3D%22w-dyn-bind-empty%22%3E%3C%2Fspan%3E%3C%2Fli%3E%3C%2Ful%3E%3Ca%20href%3D%22%23%22%20role%3D%22button%22%20data-wf-bindings%3D%22%255B%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20class%3D%22w-inline-block%22%20data-wf-cart-action%3D%22remove-item%22%20data-commerce-sku-id%3D%22%22%20aria-label%3D%22Remove%20item%20from%20cart%22%3E%3Cdiv%20class%3D%22text-tiny%20is-color-p3%22%3ERemove%3C%2Fdiv%3E%3C%2Fa%3E%3C%2Fdiv%3E%3Cinput%20aria-label%3D%22Update%20quantity%22%20data-wf-bindings%3D%22%255B%257B%2522value%2522%253A%257B%2522type%2522%253A%2522Number%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522numberPrecision%2522%252C%2522params%2522%253A%255B%25220%2522%252C%2522numberPrecision%2522%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.count%2522%257D%257D%252C%257B%2522data-commerce-sku-id%2522%253A%257B%2522type%2522%253A%2522ItemRef%2522%252C%2522filter%2522%253A%257B%2522type%2522%253A%2522identity%2522%252C%2522params%2522%253A%255B%255D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D.sku.id%2522%257D%257D%255D%22%20data-wf-conditions%3D%22%257B%2522condition%2522%253A%257B%2522fields%2522%253A%257B%2522product%253Aec-product-type%2522%253A%257B%2522ne%2522%253A%2522e348fd487d0102946c9179d2a94bb613%2522%252C%2522type%2522%253A%2522Option%2522%257D%257D%257D%252C%2522dataPath%2522%253A%2522database.commerceOrder.userItems%255B%255D%2522%257D%22%20class%3D%22w-commerce-commercecartquantity%22%20required%3D%22%22%20pattern%3D%22%5E%5B0-9%5D%2B%24%22%20inputMode%3D%22numeric%22%20type%3D%22number%22%20name%3D%22quantity%22%20autoComplete%3D%22off%22%20data-wf-cart-action%3D%22update-item-quantity%22%20data-commerce-sku-id%3D%22%22%20value%3D%221%22%2F%3E%3C%2Fdiv%3E
+                        </script>
+                        <div
+                          class="w-commerce-commercecartlist cart-list"
+                          data-wf-collection="database.commerceOrder.userItems"
+                          data-wf-template-id="wf-template-1f17e6ad-256d-ee5d-7375-2eabbde01ee1"
+                          id="cartItemsContainer"
+                        >
+                          <div
+                            class="w-commerce-commercecartemptystate"
+                            style="display: none"
+                            id="noitems"
+                          >
+                            <div
+                              aria-label="This cart is empty"
+                              aria-live="polite"
+                            >
+                              Your cart is empty.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-commerce-commercecartfooter">
+                          <div
+                            aria-atomic="true"
+                            aria-live="polite"
+                            class="w-commerce-commercecartlineitem"
+                          >
+                            <div class="text-regular is-semi-bold">
+                              Subtotal
+                            </div>
+                            <div
+                              class="w-commerce-commercecartordervalue text-regular is-semi-bold"
+                              id="subtotal"
+                            ></div>
+                          </div>
+                          <div>
+                            <a
+                              href="Checkout.html"
+                              onclick="Checkout()"
+                              value="Continue to Checkout"
+                              class="w-commerce-commercecartcheckoutbutton submit-button"
+                              style="border-radius: 0px"
+                              data-loading-text="Hang Tight..."
+                              >Continue to Checkout</a
+                            >
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#" class="menu-button w-inline-block"
+                ><img
+                  src="images/64d54306ff9f865a8c546e9e_burger.svg"
+                  loading="lazy"
+                  alt=""
+                  class="menu-icon"
+              /></a>
+            </div>
+
+            <div class="drop-menu" style="display: none">
+              <div
+                class="menu-content"
+                style="
+                  opacity: 0;
+                  transform: translate3d(30%, 0px, 0px) scale3d(1, 1, 1)
+                    rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+                  transform-style: preserve-3d;
+                "
+              >
+                <div class="menu-top">
+                  <a href="#" class="nav-phone">+962 785 571 654</a
+                  ><a href="#" class="menu-close-button w-inline-block"
+                    ><img
+                      src="images/64d55bbe1ce7e197f6230d15_close.svg"
+                      loading="lazy"
+                      alt=""
+                      class="close-icon"
+                  /></a>
+                </div>
+                <div class="menu-links">
+                  <a href="Home.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">Home</div></a
+                  >
+                  <a
+                    href="Profile.html"
+                    class="menu-link w-inline-block"
+                    id="profile"
+                    ><div class="text-regular is-color-p1">Profile</div></a
+                  >
+                  <a
+                    href="Electricguitars.html"
+                    class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">
+                      Electric Guitars
+                    </div></a
+                  >
+                  <a href="Amplifiers.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">Amplifiers</div></a
+                  >
+                  <a
+                    href="Pedalsandeffects.html"
+                    class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">
+                      Pedals &amp; Effects
+                    </div></a
+                  ><a href="Aboutus.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">About Us</div></a
+                  >
+                  <a href="Contactus.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">Contact Us</div></a
+                  >
+                  <a href="Sellandtrade.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">Sell / Trade</div></a
+                  ><a href="Guitarrepair.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">
+                      Guitar Repair
+                    </div></a
+                  ><a href="Soldguitars.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">
+                      Sold Items Selection
+                    </div></a
+                  ><a href="Ordertracking.html" class="menu-link w-inline-block"
+                    ><div class="text-regular is-color-p1">
+                      Order Tracking
+                    </div></a
+                  >
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="sections" style="margin-top: 30px">
+        <section class="blocks">
+          <div class="container">
+            <div class="blocks-grid" style="display: flex; align-content: center; justify-content: center;">
+              <div class="block-large w-inline-block" style="width: 40%; padding: 70px;" id="userInfo">
+                <h4 style="color: #e00009;">Edit Address</h4>
+                <div class="form-block w-form">
+                    
+                    <form
+                      id="editForm"
+                      class="form-content"
+                    >
+                      <div class="form-item">
+                        <label for="name" class="form-label"
+                          >City: <span class="is-color-p3">*</span></label
+                        ><input
+                          class="form-text-field w-input"
+                          maxlength="256"
+                          name="City"
+                          placeholder="Your City"
+                          type="text"
+                          id="City"
+                          required=""
+                        />
+                      </div>
+                      <div class="form-item">
+                        <label for="name" class="form-label"
+                          >Area: <span class="is-color-p3">*</span></label
+                        ><input
+                          class="form-text-field w-input"
+                          maxlength="256"
+                          name="Area"
+                          placeholder="Your Area"
+                          type="text"
+                          id="Area"
+                          required=""
+                        />
+                      </div>
+                      <div class="form-item">
+                        <label for="name" class="form-label"
+                          >Street: <span class="is-color-p3">*</span></label
+                        ><input
+                          class="form-text-field w-input"
+                          maxlength="256"
+                          name="Street"
+                          placeholder="Your Street"
+                          type="text"
+                          id="Street"
+                          required=""
+                        />
+                      </div>
+                      <div class="form-item">
+                        <label for="name" class="form-label"
+                          >PhoneNumber: <span class="is-color-p3">*</span></label
+                        ><input
+                          class="form-text-field w-input"
+                          maxlength="256"
+                          name="PhoneNumber"
+                          placeholder="Your PhoneNumber"
+                          type="text"
+                          id="PhoneNumber"
+                          required=""
+                        />
+                      </div>
+                      <div class="form-item">
+                        <label for="name" class="form-label"
+                          >PostalCode: <span class="is-color-p3">*</span></label
+                        ><input
+                          class="form-text-field w-input"
+                          maxlength="256"
+                          name="PostalCode"
+                          placeholder="PostalCode"
+                          type="text"
+                          id="PostalCode"
+                          required=""
+                        />
+                      </div>
+                      <div class="form-item">
+                        <label for="name" class="form-label"
+                          >Description: <span class="is-color-p3">*</span></label
+                        ><input
+                          class="form-text-field w-input"
+                          maxlength="256"
+                          name="Description"
+                          placeholder="Description"
+                          type="text"
+                          id="Description"
+                          required=""
+                        />
+                      </div>
+                      
+                      <div id="message"></div>
+                      <div class="button-wrapper-large for-forms">
+                        <div class="button-back"></div>
+                        <input
+                          type="submit"
+                          class="button-large w-button"
+                          value="Save"
+                          onclick="edit()"
+                        />
+                      </div>
+                    </form>
+                    
+                  </div>
+
+                  
+              </div>
+              
+            </div>
+            <div
+                  role="navigation"
+                  aria-label="List"
+                  class="w-pagination-wrapper pagination"
+                ></div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="footer-content">
+          <div
+            id="w-node-_2bbcaee1-ac5e-59c7-7c95-5302325663c0-325663be"
+            class="footer-block for-newsletter"
+          >
+            <div class="newsletter w-form">
+              <div class="text-large is-color-p2">
+                SUBSCRIBE! and be the first one to see our latest and greatest
+                arrivals. Never miss a deal!
+              </div>
+
+              <form
+                id="wf-form-Newsletter"
+                class="newsletter-form"
+                aria-label="Newsletter"
+              >
+                <input
+                  class="newsletter-field w-input"
+                  maxlength="256"
+                  placeholder="Your email"
+                  type="email"
+                  id="email-2"
+                  required=""
+                /><input
+                  type="submit"
+                  class="newsletter-button w-button"
+                  value="→"
+                />
+              </form>
+            </div>
+          </div>
+          <div
+            id="w-node-_2bbcaee1-ac5e-59c7-7c95-5302325663cd-325663be"
+            class="footer-block for-contact"
+          >
+            <div class="footer-contact">
+              <div class="contact-link">
+                <a href="#" target="_blank" class="text-link-large"
+                  >IRBID, JORDAN</a
+                >
+              </div>
+              <div class="wrapper">
+                <div class="contact-link">
+                  <a href="mailto:sales@legato.com" class="text-link-large"
+                    >sales@shredded.com</a
+                  >
+                </div>
+                <div class="contact-link">
+                  <a href="#" class="text-link-large">+962 785 571 654</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-social">
+              <a
+                data-w-id="2bbcaee1-ac5e-59c7-7c95-5302325663da"
+                href="http://instagram.com/"
+                target="_blank"
+                class="social-link w-inline-block"
+                ><img
+                  src="images/64d58aa543fc419f2b662fca_Instagram.svg"
+                  loading="lazy"
+                  alt="Instagram"
+                  class="social-icon" /></a
+              ><a
+                href="http://facebook.com/"
+                target="_blank"
+                class="social-link with-borders w-inline-block"
+                ><img
+                  src="images/64d58ab8eb24fcef6ecb57ab_Facebook.svg"
+                  loading="lazy"
+                  alt="Facebook"
+                  class="social-icon" /></a
+              ><a
+                href="http://youtube.com/"
+                target="_blank"
+                class="social-link w-inline-block"
+                ><img
+                  src="images/64d58ac529d5de17304cac28_Youtube.svg"
+                  loading="lazy"
+                  alt="YouTube"
+                  class="social-icon"
+              /></a>
+            </div>
+          </div>
+          <div class="footer-block">
+            <h3 class="heading-small for-footer">Explore</h3>
+            <div class="footer-links">
+              <a href="Electricguitars.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">Electric Guitars</div></a
+              ><a href="Amplifiers.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">Amplifiers</div></a
+              ><a
+                href="Pedalsandeffects.html"
+                class="footer-link w-inline-block"
+                ><div class="text-small for-footer">
+                  Pedals &amp; Effects
+                </div></a
+              ><a href="Aboutus.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">About Us</div></a
+              >
+            </div>
+          </div>
+          <div class="footer-block">
+            <h3 class="heading-small for-footer">Services</h3>
+            <div class="footer-links">
+              <a href="Sellandtrade.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">Sell / Trade</div></a
+              ><a href="Guitarrepair.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">Guitar Repair</div></a
+              ><a href="Soldguitars.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">
+                  Sold Guitar Selection
+                </div></a
+              ><a href="Ordertracking.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">Order Tracking</div></a
+              >
+            </div>
+          </div>
+          <div class="footer-block">
+            <h3 class="heading-small for-footer">Help</h3>
+            <div class="footer-links">
+              <a href="Contactus.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">Contact Us</div></a
+              ><a
+                href="Shippingandreturns.html"
+                class="footer-link w-inline-block"
+                ><div class="text-small for-footer">
+                  Shipping &amp; Returns
+                </div></a
+              ><a
+                href="Termsandconditions.html"
+                class="footer-link w-inline-block"
+                ><div class="text-small for-footer">
+                  Terms &amp; Conditions
+                </div></a
+              ><a href="Privacypolicy.html" class="footer-link w-inline-block"
+                ><div class="text-small for-footer">Privacy Policy</div></a
+              >
+            </div>
+          </div>
+          <div class="footer-block for-opening">
+            <h3 class="heading-small for-footer">Opening Hours</h3>
+            <div class="footer-links">
+              <div class="text-small for-footer">Weekdays: 10am - 7pm</div>
+              <div class="text-small for-footer">Thursday: 10am - 6pm</div>
+              <div class="text-small for-footer">Friday: Closed</div>
+              <div class="text-small is-color-p2 is-italic">
+                Appointment Recommended
+              </div>
+            </div>
+          </div>
+          <div
+            id="w-node-_2bbcaee1-ac5e-59c7-7c95-530232566428-325663be"
+            class="footer-block for-legal"
+            style="display: flex; justify-content: center"
+          >
+            <div class="text-small for-footer">
+              ©2024 Shredded Guitars.
+              <span class="is-hidden-phone">All rights reserved.</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script
+      src="files/jquery-3.5.1.min.dc5e7f18c8.js.download"
+      type="text/javascript"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="files/webflow.5f909fe94.js.download"
+      type="text/javascript"
+    ></script>
+    <script>
+        async function getAddress() {
+        debugger;
+        let addressId = localStorage.getItem("addressId");
+        try {
+          let response = await fetch(
+            `https://localhost:44384/api/Users/GetAddressById/${addressId}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+              },
+            }
+          );
+          if (!response.ok) {
+            throw new Error("HTTP error!");
+          }
+          let json = await response.json();
+          document.getElementById("City").value = json.city;
+          document.getElementById("Area").value = json.area;
+          document.getElementById("Street").value = json.street;
+          document.getElementById("PhoneNumber").value = json.phoneNumber;
+          document.getElementById("PostalCode").value = json.postalCode;
+          document.getElementById("Description").value = json.description;
+        } catch (error) {
+          console.error("Error:", error);
+        }
+      }
+      getAddress();
+
+      async function edit() {
+        debugger;
+        event.preventDefault();
+        let addressId = localStorage.getItem("addressId");
+        let message = document.getElementById("message")
+        const formRef = document.getElementById("editForm");
+        const formData = new FormData(formRef);
+        let response = await fetch(`https://localhost:44384/api/Users/PutAddress/${addressId}`, {
+          method: "PUT",
+          body: formData,
+        });
+        if (response.status != 200) {
+            message.innerHTML = `<p style="color:red;">Failed to edit Address. Please try again.</p><br/>`;
+            return;
+        }
+        alert("Address Updated Successfully");
+        window.location.href = "profile.html"
+      }
+    </script>
+    <script src="nav.js"></script>
+  </body>
+</html>

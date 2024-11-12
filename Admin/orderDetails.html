@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ShreddedGuitars</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+  href="../files/legato-template.webflow.64ce0d9f8.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    .wf-force-outline-none[tabindex="-1"]:focus {
+      outline: none;
+    }
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+      }
+      th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+      }
+      th {
+          background-color: #f4f4f4;
+      }
+      tr:nth-child(even) {
+          background-color: #f9f9f9;
+      }
+  </style>
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="dashboard.html" class="logo d-flex align-items-center">
+        <img src="../images/shredded_logo-removebg-preview.png" alt="" style="height: 100px !important; max-height: 100px !important;">
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Logo -->
+
+    <nav class="header-nav ms-auto" id="nav">
+      
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="dashboard.html">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-bar-chart"></i><span>Orders</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="allOrders.html">
+              <i class="bi bi-circle"></i><span>All Orders</span>
+            </a>
+          </li>
+          <li>
+            <a href="trackOrder.html">
+              <i class="bi bi-circle"></i><span>Track Order</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Products</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="allProducts.html">
+              <i class="bi bi-circle"></i><span>All Products</span>
+            </a>
+          </li>
+          <li>
+            <a href="addProduct.html">
+              <i class="bi bi-circle"></i><span>Add Product</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Applications</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="SellOrTrade.html">
+              <i class="bi bi-circle"></i><span>Sell Or Trade</span>
+            </a>
+          </li>
+          <li>
+            <a href="Repairs.html">
+              <i class="bi bi-circle"></i><span>Repairs</span>
+            </a>
+          </li>
+          <li>
+            <a href="CustomOrders.html">
+              <i class="bi bi-circle"></i><span>Custom Orders</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="contact.html">
+          <i class="bi bi-envelope"></i>
+          <span>Contacts</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users.html">
+          <i class="bi bi-layout-text-window-reverse"></i><span>Users</span>
+        </a>
+      </li>
+
+     
+
+      <li class="nav-item" id="adminsli" style="display: none;">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-gem"></i><span>Admins</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="allAdmins.html">
+              <i class="bi bi-circle"></i><span>All Admins</span>
+            </a>
+          </li>
+          <li>
+            <a href="addAdmin.html">
+              <i class="bi bi-circle"></i><span>Add Admin</span>
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Dashboard</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+        <section class="blocks">
+            <div class="container">
+              <div class="blocks-grid" style="display: flex; align-content: center; justify-content: center;">
+                <div class="block-large w-inline-block" style="width: 50%; background-color: #fff;" id="OrderDetails">
+                  
+                  <div id="123" style="width: 100%;">
+                  
+                        </div>
+                            <h4 style="align-self: flex-start;">Order Items:</h4>  
+                </div>
+  
+              </div>
+              <div
+                    role="navigation"
+                    aria-label="List"
+                    class="w-pagination-wrapper pagination"
+                  ></div>
+            </div>
+          </section>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Shredded</span></strong>. All Rights Reserved
+    </div>
+   
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <script>
+    async function getOrder() {
+    let orderId = localStorage.getItem("orderId");
+    try {
+      let response = await fetch(
+        `https://localhost:44384/api/Orders/GetOrderById/${orderId}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("HTTP error!");
+      }
+      let json = await response.json();
+      console.log(json);
+      localStorage.setItem("orderUserId", json.userId);
+      let orderDetails = document.getElementById("OrderDetails");
+      json.orderItems.forEach(element => {
+        orderDetails.innerHTML += `<div class="w-commerce-commercecartitem cart-item" style="
+width: 400px;
+">
+                <img
+                  src="../images/${element.productDetails.image1}"
+                  alt=""
+                  class="w-commerce-commercecartitemimage cart-image"
+                  style="height:92px;"
+                />
+                <div
+                  class="w-commerce-commercecartiteminfo cart-summary"
+                >
+                  <div
+                    class="w-commerce-commercecartproductname text-small is-semi-bold"
+                  >
+                    ${element.productDetails.name}
+                  </div>
+                  <div
+                  class="text-regular"
+                  >
+                    &nbsp;${(element.productDetails.price - (element.productDetails.price * element.productDetails.discount))}.00&nbsp;JOD
+                  </div>
+                </div>
+              </div>`;
+      });
+      orderDetails.innerHTML += `
+      <div style="display: flex; justify-content: space-between; width: 100%;">
+            <p style="align-self: flex-start;"><b>Total Amount:</b> ${json.totalAmount}.00JDs</p>
+            <p  style="display: inline; align-self: flex-end;"><b>Order Status:</b> ${json.status}</p>
+            </div>
+      `;
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  }
+  getOrder();
+    async function userInfo() {
+        debugger
+        let id = localStorage.getItem("orderUserId");
+        let username = document.getElementById("name");
+        let useremail = document.getElementById("email");
+        let useraddress = document.getElementById("address");
+        let divv = document.getElementById("123");
+        let request = await fetch(
+          `https://localhost:44384/api/Users/GetUserById/${id}`
+        );
+        let response = await request.json();
+        console.log(response);
+        // username.textContent = ;
+        // useremail.textContent = ;
+        // useraddress.textContent = response.address.area, response.address.city, response.address.street, response.address.phoneNumber;
+        divv.innerHTML = `
+        <div style="display: flex; justify-content: space-between; width: 100%;">
+                    <h4 style="align-self: flex-start;">User Name:</h4>
+                    <h5 id="name" style="display: inline; align-self: flex-end;">${response.username}</h5>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; width: 100%;">
+                        <h4 style="align-self: flex-start;">User Email:</h4>
+                        <h5 id="email" style="display: inline; align-self: flex-end;">${response.email}</h5>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <h4 style="align-self: flex-start;">Address:</h4>
+                            <h5 id="address" style="display: inline; align-self: flex-end;">${response.address.area}, ${response.address.city}, ${response.address.street}</h5>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; width: 100%;">
+                            <h4 style="align-self: flex-start;">Phone:</h4>
+                            <h5 id="address" style="display: inline; align-self: flex-end;">${response.address.phoneNumber}</h5>
+                            </div>
+        `;
+    }
+    userInfo();
+</script>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+<script src="navAndSideBar.js"></script>
+</body>
+
+</html>

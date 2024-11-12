@@ -367,13 +367,8 @@ class="w-mod-js w-mod-ix">
               </div>
               <div class="form-block w-form">
                 <form
-                  id="wf-form-Guitar-Repair"
-                  name="wf-form-Guitar-Repair"
-                  data-name="Guitar Repair"
-                  method="get"
+                  id="postForm"
                   class="form-content"
-                  data-wf-page-id="64db868561707c49632aaab3"
-                  data-wf-element-id="aaeee592-adfe-3303-b9b3-39abd1ef49ad"
                   aria-label="Guitar Repair"
                 >
                   <div class="form-item">
@@ -382,8 +377,7 @@ class="w-mod-js w-mod-ix">
                     ><input
                       class="form-text-field w-input"
                       maxlength="256"
-                      name="name"
-                      data-name="Name"
+                      name="Name"
                       placeholder="Your Name"
                       type="text"
                       id="name"
@@ -397,7 +391,6 @@ class="w-mod-js w-mod-ix">
                       class="form-text-field w-input"
                       maxlength="256"
                       name="Email"
-                      data-name="Email"
                       placeholder="example@email.com"
                       type="email"
                       id="Email-3"
@@ -405,49 +398,29 @@ class="w-mod-js w-mod-ix">
                     />
                   </div>
                   <div class="form-item">
-                    <label for="message" class="form-label"
+                    <label for="Message" class="form-label"
                       >Your message: <span class="is-color-p3">*</span></label
                     ><textarea
                       placeholder="Your message..."
                       maxlength="5000"
-                      name="message"
+                      name="Message"
                       required=""
-                      data-name="Message"
-                      id="message"
+                      id="Message"
                       class="form-text-area w-input"
                     ></textarea>
                   </div>
+                  <div id="errormessage"></div>
                   <div class="button-wrapper-large for-forms">
                     <div class="button-back"></div>
                     <input
                       type="submit"
-                      data-wait=""
                       class="button-large w-button"
                       value="Submit"
+                      onclick="post()"
                     />
                   </div>
                 </form>
-                <div
-                  class="success-message w-form-done"
-                  tabindex="-1"
-                  role="region"
-                  aria-label="Guitar Repair success"
-                >
-                  <div class="text-regular">
-                    Thank you! Your submission has been received!
-                  </div>
-                </div>
-                <div
-                  class="error-message w-form-fail"
-                  tabindex="-1"
-                  role="region"
-                  aria-label="Guitar Repair failure"
-                >
-                  <div class="text-small">
-                    Oops! Something went wrong while submitting the form.
-                  </div>
-                </div>
-              </div>
+                
             </div>
           </div>
         </section>
@@ -656,6 +629,24 @@ class="w-mod-js w-mod-ix">
       src="files/webflow.5f909fe94.js.download"
       type="text/javascript"
     ></script>
+    <script>
+      async function post() {
+        debugger;
+        event.preventDefault();
+        let message = document.getElementById("errormessage")
+        const formRef = document.getElementById("postForm");
+        const formData = new FormData(formRef);
+        let response = await fetch(`https://localhost:44384/api/Contacts`, {
+          method: "POST",
+          body: formData,
+        });
+        if (response.status != 200) {
+            message.innerHTML = `<p style="color:red;">Failed to send message. Please try again.</p><br/>`;
+            return;
+        }
+        alert("Message sent Successfully");
+      }
+    </script>
     <script src="nav.js"></script>
   </body>
 </html>

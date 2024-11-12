@@ -328,14 +328,20 @@
       <main class="sections" style="margin-top: 30px">
         <section class="blocks">
           <div class="container">
-            <div class="blocks-grid">
-              <div class="block-large w-inline-block" id="userInfo"></div>
+            <div class="blocks-grid" style="display: flex; align-content: center; justify-content: center;">
+              <div class="block-large w-inline-block" style="width: 50%;" id="OrderDetails">
+                <div style="display: flex; justify-content: space-between; width: 100%;">
+                <h4 style="align-self: flex-start;">Your Order:</h4>
+                <h5 id="date" style="display: inline; align-self: flex-end;"></h5>
+                </div>
+              </div>
 
-              <div
-                class="block-large w-inline-block"
-                id="addressAndOrders"
-              ></div>
             </div>
+            <div
+                  role="navigation"
+                  aria-label="List"
+                  class="w-pagination-wrapper pagination"
+                ></div>
           </div>
         </section>
       </main>
@@ -515,126 +521,65 @@
       type="text/javascript"
     ></script>
     <script>
-      async function userInfo() {
-        let id = localStorage.getItem("userId");
-        let userInfo = document.getElementById("userInfo");
-        let request = await fetch(
-          `https://localhost:44384/api/Users/GetUserById/${id}`
-        );
-        let response = await request.json();
-        console.log(response);
-
-        userInfo.innerHTML = `
-            <img src="images/usersImages/${response.image}"
-                  loading="lazy"
-                  style="width: 200px; height: 200px; border-radius: 50%;"
-                  alt=""
-                  class="block-large-image" />
-                <div class="block-info">
-                  <h2 class="heading-large is-center">
-                    ${response.name}
-                  </h2>
-                  <div style="display: flex;align-items: flex-start;flex-direction: column;">
-                  <h5>Username: ${response.username}</h5>
-                  <h5>Email: ${response.email}</h5>
-                  <h5>User sence: ${response.createdAt}</h5>
-                  <h5>Status: ${response.status}</h5>
+        async function getOrder() {
+        debugger;
+        let orderId = localStorage.getItem("orderId");
+        try {
+          let response = await fetch(
+            `https://localhost:44384/api/Orders/GetOrderById/${orderId}`,
+            {
+              method: "GET",
+              headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+              },
+            }
+          );
+          if (!response.ok) {
+            throw new Error("HTTP error!");
+          }
+          let json = await response.json();
+          console.log(json);
+          let date = document.getElementById("date");
+          date.textContent = json.orderDate;
+          let orderDetails = document.getElementById("OrderDetails");
+          json.orderItems.forEach(element => {
+            orderDetails.innerHTML += `<div class="w-commerce-commercecartitem cart-item" style="
+    width: 400px;
+">
+                    <img
+                      src="images/${element.productDetails.image1}"
+                      alt=""
+                      class="w-commerce-commercecartitemimage cart-image"
+                      style="height:92px;"
+                    />
+                    <div
+                      class="w-commerce-commercecartiteminfo cart-summary"
+                    >
+                      <div
+                        class="w-commerce-commercecartproductname text-small is-semi-bold"
+                      >
+                        ${element.productDetails.name}
+                      </div>
+                      <div
+                      class="text-regular"
+                      >
+                        &nbsp;${(element.productDetails.price - (element.productDetails.price * element.productDetails.discount))}.00&nbsp;JOD
+                      </div>
                     </div>
-                  <div class="indicator">
-                    <a href="EditProfile.html" class="text-large is-color-p3">Edit Info</a>
-                    <img
-                      src="images/64da22e55ffe2951302e3687_arrow-see-more.svg"
-                      loading="lazy"
-                      alt=""
-                      class="arrow"
-                    />
-                    <div class="indicator-line"></div>
-                  </div>
-                </div>`;
-
-        let addressAndOrders = document.getElementById("addressAndOrders");
-        addressAndOrders.innerHTML = `
-                 <div class="block-info for-pedals">
-                    ${
-                      response.address == null
-                        ? `
-                    <h2 class="heading-large is-center">
-                    You dont have an address yet
-                  </h2>
-                  <div class="indicator">
-                    <a href="Addaddress.html" class="text-large is-color-p3">Click here to add one</a>
-                    <img
-                      src="images/64da22e55ffe2951302e3687_arrow-see-more.svg"
-                      loading="lazy"
-                      alt=""
-                      class="arrow"
-                    />
-                    <div class="indicator-line"></div>
-                  </div>
+                  </div>`;
+          });
+          orderDetails.innerHTML += `
+          <div style="display: flex; justify-content: space-between; width: 100%;">
+                <p style="align-self: flex-start;"><b>Total Amount:</b> ${json.totalAmount}.00JDs</p>
+                <p  style="display: inline; align-self: flex-end;"><b>Order Status:</b> ${json.status}</p>
                 </div>
-                    `
-                        : `
-                    <h2 class="heading-large is-center">
-                    My Address:
-                  </h2>
-                  <h5 style="text-align: center;">${response.address.area}, ${response.address.city}, ${response.address.street}, ${response.address.phoneNumber}</h5>
-                  <div class="indicator">
-                    <a href="Editaddress.html" onclick="editaddress(${response.address.id})" class="text-large is-color-p3">Edit address</a>
-                    <img
-                      src="images/64da22e55ffe2951302e3687_arrow-see-more.svg"
-                      loading="lazy"
-                      alt=""
-                      class="arrow"
-                    />
-                    <div class="indicator-line"></div>
-                  </div>
-                </div>
-                    `
-                    }
-                `;
-                if(response.orders != null && response.orders.length > 0) {
-        addressAndOrders.innerHTML += `
-                <h2 class="heading-large is-center">
-                    My Orders:
-                  </h2>
-                  <table>
-                 <thead>
-                 <tr>
-                <th>Order ID</th>
-                <th>Order Date</th>
-                <th>Total Amount</th>
-                <th>Status</th>
-                <th>Action</th>
-                </tr>
-                </thead>
-              <tbody id="ordersTableBody">
-              
-              </tbody>
-              </table>
-                `;
-              let tbody = document.getElementById("ordersTableBody");
-              response.orders.forEach(element => {
-                tbody.innerHTML += `
-                <tr>
-                <th>${element.id}</th>
-                <th>${element.orderDate}</th>
-                <th>${element.totalAmount}.00 JDs</th>
-                <th>${element.status}</th>
-                <th><a href="OrderDetails.html" onclick="orderDetails(${element.id})" style="color:#e00009;">Details</a></th>
-            </tr>
-                `;
-              });
-              }
+          `;
+        } catch (error) {
+          console.error("Error:", error);
+        }
       }
-      userInfo();
-      function orderDetails(id) {
-        localStorage.setItem('orderId', id);
-        window.location.href = "OrderDetails.html";
-      }
-      function editaddress(id) {
-        localStorage.setItem('addressId', id);
-        window.location.href = "Editaddress.html";
-      }
+      getOrder();
     </script>
     <script src="nav.js"></script>
   </body>

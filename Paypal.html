@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SHREDDED GUTARS</title>
+    <link rel="stylesheet" type="text/css" href="paypal.css">
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-image-container">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz-kxLXwUrxWeUlYcwJoBWDns90QWCJC1BGA&s" alt="MyProgrammingBook">
+        </div>
+        <div class="product-info-container">
+            <h1>SHREDDED GUTARS</h1>
+            <p class="price" id="price"></p>
+            <p class="product-description">
+                 thank you for your order please choose your prefered Payment method.
+            </p>
+            <p>*Terms and Conditions Apply</p>
+            <div id="paypal-button-container"></div>
+        </div>
+    </div>
+
+
+        <!-- Thank You Modal -->
+    <div id="thankYouModal" class="modal">
+        <div class="modal-content">
+            <!-- <span class="close">&times;</span> Close button -->
+            <h1>Thank you for your order!</h1>
+            <p>Your order has been successfully placed and is on its way to you. you can check your orders details from your profile</p>
+            <p>Payment Method: <strong>Paypal</strong></p>
+            <a id="goToCollection" class="redirect-button" href="Home.html" >Back to home</a>
+        </div>
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=AWoQADMAX_vx7WgYgVwr-SiD03yiKLNGdEqcAAJVWhoxvD1UIHRwIsi3O7Ha4RgxaOORA5ZCocdcfTMI&currency=USD"></script>
+
+    <!-- <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script> -->
+    <script src="patpal.js"></script>
+</body>
+</html>
+
+<!-- ///////////////////////////////////////////
+Css code  -->
+<style>
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  .product-container {
+    max-width: 600px;
+    /* height: 500px; */
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .product-image-container {
+    width: 30%;
+  }
+  
+  .product-info-container {
+    width: 70%;
+    padding-left: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-info-container form {
+    width: 100%;
+    margin-top: 20px;
+    align-self: flex-end;
+  }
+  
+  h1 {
+    margin-top: 0;
+  }
+  
+  .price {
+    color: #ff5722;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Button Styling */
+.redirect-button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.redirect-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+
+</style>
+
+
+<!-- /////////////////
+javaScript code  -->
+<script>
+
+async function Checkout() {
+        debugger;
+        event.preventDefault();
+        let userId = localStorage.getItem("userId");
+        let totalAmount = localStorage.getItem('total');
+        let data = {
+          userId: userId,
+          TotalAmount: totalAmount,
+          TransactionId: "123456"
+        };
+        let response = await fetch(
+          "https://localhost:44384/api/Checkouts/checkout",
+          {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
+      }
+
+
+
+
+
+
+function initPayPalButton() {
+    let price = document.getElementById("price");
+    price.innerHTML = localStorage.getItem("total") + " JDs";
+
+    paypal.Buttons({
+        style: {
+            shape: 'rect',
+            color: 'gold',
+            layout: 'vertical',
+            label: 'paypal',
+        },
+
+        createOrder: function(data, actions) {
+    const totalAmountJOD = parseFloat(localStorage.getItem('total') || '0.99');
+    const exchangeRate = 1.4102;
+    const totalAmountUSD = (totalAmountJOD * exchangeRate).toFixed(2);
+
+    return actions.order.create({
+        purchase_units: [{
+            amount: {
+                currency_code: "USD",
+                value: totalAmountUSD
+            }
+        }]
+    });
+},
+
+        onApprove: function(data, actions) {
+            
+            return actions.order.capture().then(function(orderData) {
+                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                debugger;
+                Checkout();
+                // Show the "Thank You" modal
+                const modal = document.getElementById('thankYouModal');
+                const butons = document.getElementById("paypal-button-container")
+                modal.style.display = "block";
+                modal.style.zIndex = 1;
+                butons.style.zIndex = 0;
+
+                // Close the modal when the close button is clicked
+                const closeButton = document.getElementsByClassName('close')[0];
+                closeButton.onclick = function() {
+                    modal.style.display = "none";
+                };
+
+                // Close the modal when the user clicks outside of the modal
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                };
+            });
+        },
+
+        onError: function(err) {
+            console.error('PayPal Error:', err);
+        }
+    }).render('#paypal-button-container');
+}
+
+initPayPalButton();
+
+</script>
+
+
+
+<!-- 
+the email address = sb-xhks4332319785@personal.example.com
+the password = 4&0/GVk?
+-->
